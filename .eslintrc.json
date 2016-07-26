@@ -1,0 +1,6 @@
+{
+  "extends": "nimedev",
+  "rules": {
+    "no-console": 0
+  }
+}
