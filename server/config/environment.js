@@ -33,11 +33,7 @@ module.exports = class {
         || process.env.NODEJS_MONGODB_URI || 'mongodb://localhost:27017/nodejs-api',
 
         // Setting for moongoose
-        options: {
-          db: {
-            safe: true
-          }
-        }
+        options: { db: { safe: true } }
       }
     }
 
