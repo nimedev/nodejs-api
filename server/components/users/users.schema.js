@@ -7,8 +7,14 @@
 // npm modules
 const mongoose = require('mongoose')
 
+// App modules
+const database = require('../../database')
+
 // Constants & Variables
 const Schema = mongoose.Schema
+
+// Get database connection from a pool
+const db = database.dbPool.connections.default
 
 // User schema
 const UserSchema = new Schema({
@@ -36,4 +42,4 @@ const UserSchema = new Schema({
   }) // EoS
 
 /** User mongoose model */
-module.exports = mongoose.model('User', UserSchema)
+module.exports = db.model('User', UserSchema)

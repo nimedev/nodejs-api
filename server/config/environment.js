@@ -25,15 +25,18 @@ module.exports = class {
 
     // MongoDB connection options
     this.mongo = {
-      // Url according with environment variables
-      uri: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL
-      || process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME
-      || process.env.NODEJS_MONGODB_URI || 'mongodb://localhost:27017/nodejs-api',
+      // Define a object by connection
+      default: {
+        // Url according with environment variables
+        uri: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL
+        || process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME
+        || process.env.NODEJS_MONGODB_URI || 'mongodb://localhost:27017/nodejs-api',
 
-      // Setting for moongoose
-      options: {
-        db: {
-          safe: true
+        // Setting for moongoose
+        options: {
+          db: {
+            safe: true
+          }
         }
       }
     }

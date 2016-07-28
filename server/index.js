@@ -15,11 +15,11 @@ global.__baseDir = __dirname
 
 // npm modules
 const express = require('express')
-const mongoose = require('mongoose')
 
 // App modules
 const components = require('./components')
 const appConfig = require('./config')
+const database = require('./database')
 const configExpress = require('./config-express')
 const routes = require('./routes')
 const Sandbox = require('./sandbox')
@@ -38,12 +38,7 @@ const sandbox = new Sandbox()
 // APP CONFIGURATION ==================
 // ====================================
 // Connect to database
-mongoose.Promise = global.Promise
-mongoose.connect(appConfig.mongo.uri, appConfig.mongo.options)
-mongoose.connection.on('error', err => {
-  console.error('MongoDB connection error: ' + err)
-  process.exit(-1)
-})
+database.dbPool.connect()
 
 // Populate DB with sample data
 // if(config.seedDB) { require('./config/seed') }
