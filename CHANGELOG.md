@@ -1,5 +1,18 @@
 # Change Log
 
+## [0.2.0] - 2016-08-07
+
+### Added 
+- Add link to license in README.md.
+
+### Modified
+- Rename users module to user.
+- Implement sandbox for each component.
+
+### Upgraded
+- Upgrade mongoose and eslint.
+
+
 ## [0.1.1] - 2016-07-28
 
 ### Added

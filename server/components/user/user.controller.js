@@ -1,6 +1,6 @@
 /**
  * Group users routes in one express router
- * @module users.controller
+ * @module user.controller
  */
 'use strict'
 
@@ -11,19 +11,16 @@ const express = require('express')
 const dummy = require('../../middleware/dummy')
 
 // Component modules
-const User = require('./users.schema')
+const User = require('./user.schema')
 
 // Constants & Variables
 const router = express.Router()
 
 /**
- * @param {Object} sandbox - Reference to sandbox object.
  * @returns router for users routes.
  */
-module.exports = sandbox => {
+module.exports = () => {
   let middleware
-
-  console.log('Sandbox object: ', sandbox)
 
   /**
    * Send a list of users

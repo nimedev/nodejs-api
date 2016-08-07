@@ -11,5 +11,5 @@
 module.exports = (parentRouter, sandbox) => {
   // Require the modules here to only call the modules when run the function
   // and avoid load modules when load this module
-  require('./users')(parentRouter, sandbox)
+  require('./user')(parentRouter, sandbox)
 }

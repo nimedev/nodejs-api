@@ -1,6 +1,6 @@
 {
   "name": "nodejs-api",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A starting point to implement APIs with node js",
   "main": "server",
   "scripts": {
@@ -30,11 +30,11 @@
     "cors": "2.7.1",
     "errorhandler": "1.4.3",
     "express": "4.14.0",
-    "mongoose": "4.5.7",
+    "mongoose": "4.5.8",
     "morgan": "1.7.0"
   },
   "devDependencies": {
-    "eslint": "3.1.1",
+    "eslint": "3.2.2",
     "eslint-config-nimedev": "3.0.0"
   }
 }

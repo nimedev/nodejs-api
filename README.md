@@ -86,3 +86,6 @@ This project is configured to use with `VScode`. Also contain pre-configured tas
 
 
 ## [Changelog](CHANGELOG.md)
+
+
+## [License](LICENSE.md)
