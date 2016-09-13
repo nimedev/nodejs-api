@@ -1,6 +1,6 @@
 {
-  "ambientDependencies": {
-    "express": "github:DefinitelyTyped/DefinitelyTyped/express/express.d.ts#dd638012d63e069f2c99d06ef4dcc9616a943ee4",
-    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#366b936e62a6244a15f011e0ee0559b903d1dd65"
+  "globalDependencies": {
+    "express": "registry:dt/express#4.0.0+20160708185218",
+    "node": "registry:dt/node#6.0.0+20160823142437"
   }
 }

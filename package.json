@@ -1,13 +1,17 @@
 {
   "name": "nodejs-api",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A starting point to implement APIs with node js",
-  "main": "server",
+  "main": "server/server",
   "scripts": {
     "lint": "eslint --ext=js .",
     "start": "node server/server",
-    "update": "rm -rf node_modules && npm install && npm outdated"
+    "typings": "typings install",
+    "update": "npm install && npm prune && npm outdated"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/nimedev/nodejs-api.git"
@@ -27,14 +31,15 @@
   "dependencies": {
     "body-parser": "1.15.2",
     "compression": "1.6.2",
-    "cors": "2.7.1",
+    "cors": "2.8.1",
     "errorhandler": "1.4.3",
     "express": "4.14.0",
-    "mongoose": "4.5.8",
+    "mongoose": "4.6.0",
     "morgan": "1.7.0"
   },
   "devDependencies": {
-    "eslint": "3.2.2",
-    "eslint-config-nimedev": "3.0.0"
+    "eslint": "3.5.0",
+    "eslint-config-nimedev": "3.0.1",
+    "pre-commit": "1.1.3"
   }
 }

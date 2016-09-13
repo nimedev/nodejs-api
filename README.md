@@ -32,12 +32,23 @@ You can use `typings` for intellisense (I use this in VScode).
 npm install typings -g
 
 # cd to your project folder
-typings install
+npm run typings
 ```
-This create a typings folder which you can reference in your JavaScript files to get intellisense.
+This create a `typings` folder which you can reference in your JavaScript files to get intellisense.
 
 
 ## Workflow
+
+### Environment variables
+
+- Environment for server: `NODE_ENV` = 'development'
+- Port for api: `NODEJS_API_PORT` = 8080
+
+To change any of this variables:
+
+```sh
+export NODEJS_API_PORT=8000
+```
 
 ### Development workflow
 
@@ -62,6 +73,23 @@ Press F5 or run debug command.
 ### Production workflow
 You can use `PM2` or other tools.
 
+### Update dependencies
+Follow this rules to update dependencies:
+
+- Uninstall old dependency and install again
+
+```sh
+# cd to your project folder
+npm uninstall eslint && npm install eslint -D
+```
+
+- Update shrinkwrap file
+
+```sh
+# cd to your project folder
+npm shrinkwrap --dev
+```
+
 ### Others scripts
 
 To run eslint in console type:
@@ -69,13 +97,6 @@ To run eslint in console type:
 ```sh
 # cd to your project folder
 npm run lint
-```
-
-To update npm dependencies after change a version in packages
-
-```sh
-# cd to your project folder
-npm run update
 ```
 
 ## Editors

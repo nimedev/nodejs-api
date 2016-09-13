@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.2.1] - 2016-09-13
+
+### Added
+- Add pre-commit hook.
+
+### Modified
+- Update README.md file.
+
+### Updated
+- Upgrade eslint, eslint-config-nimedev, cors and mongoose.
+
+
 ## [0.2.0] - 2016-08-07
 
 ### Added 

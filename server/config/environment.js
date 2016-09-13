@@ -18,7 +18,7 @@ module.exports = class {
 
     // Server port
     this.port = process.env.OPENSHIFT_NODEJS_PORT ||
-      process.env.NODEJS_API_PORT || process.env.PORT || 8081
+      process.env.NODEJS_API_PORT || process.env.PORT || 8080
 
     // Server IP
     this.ip = process.env.OPENSHIFT_NODEJS_IP || process.env.IP || undefined
