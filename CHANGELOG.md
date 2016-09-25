@@ -1,5 +1,19 @@
 # Change Log
 
+## [1.0.0] - 2016-09-28
+
+### Added
+- Implement api test.
+- Implement sandbox test.
+
+### Modified
+- Improve sandbox module.
+- Use Object.freeze in some modules.
+
+### Updated
+- Upgrade mongoose, eslint and mocha package
+
+
 ## [0.2.1] - 2016-09-13
 
 ### Added

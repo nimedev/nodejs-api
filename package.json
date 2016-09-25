@@ -1,15 +1,20 @@
 {
   "name": "nodejs-api",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "A starting point to implement APIs with node js",
-  "main": "server/server",
+  "main": "server",
   "scripts": {
     "lint": "eslint --ext=js .",
-    "start": "node server/server",
+    "shrink": "npm shrinkwrap --dev",
+    "start": "node server",
+    "test": "npm run test:unit && npm run test:api",
+    "test:api": "mocha 'test/api-test'",
+    "test:unit": "export NODE_ENV='test' && mocha 'server/**/*.spec.js'",
     "typings": "typings install",
     "update": "npm install && npm prune && npm outdated"
   },
   "pre-commit": [
+    "test",
     "lint"
   ],
   "repository": {
@@ -34,12 +39,15 @@
     "cors": "2.8.1",
     "errorhandler": "1.4.3",
     "express": "4.14.0",
-    "mongoose": "4.6.0",
+    "mongoose": "4.6.1",
     "morgan": "1.7.0"
   },
   "devDependencies": {
-    "eslint": "3.5.0",
+    "chai": "3.5.0",
+    "chai-http": "3.0.0",
+    "eslint": "https://registry.npmjs.org/eslint/-/eslint-3.5.0.tgz",
     "eslint-config-nimedev": "3.0.1",
+    "mocha": "https://registry.npmjs.org/mocha/-/mocha-3.0.2.tgz",
     "pre-commit": "1.1.3"
   }
 }

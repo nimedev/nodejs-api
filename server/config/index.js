@@ -10,4 +10,4 @@ const Environment = require(`./${process.env.NODE_ENV}`)
 /**
  * Configurations according with process.env.NODE_ENV environment variable
  */
-module.exports = new Environment()
+module.exports = Object.freeze(new Environment())

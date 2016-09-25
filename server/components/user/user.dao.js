@@ -1,13 +1,15 @@
-/** @module user.service */
+/**
+ * @module user.dao
+ */
 'use strict'
 
 // Component modules
 const User = require('./user.schema')
 
 /** Services for users module */
-module.exports = {
+module.exports = Object.freeze({
   findingUserById
-}
+})
 
 /**
  * Get user document by id.

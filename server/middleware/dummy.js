@@ -2,7 +2,7 @@
 'use strict'
 
 /** Dummy middleware */
-module.exports = {
+module.exports = Object.freeze({
   /**
    * Show a dummy message in console
    * @param {Object} req - request object
@@ -10,7 +10,8 @@ module.exports = {
    * @param {Object} next - next middleware object
    */
   useDummy: (req, res, next) => {
+    // eslint-disable-next-line no-console
     console.log('DUMMY MIDDLEWARE')
     next()
   }
-}
+})

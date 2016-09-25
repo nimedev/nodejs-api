@@ -22,7 +22,7 @@ const appConfig = require('./config')
 const database = require('./database')
 const configExpress = require('./config-express')
 const routes = require('./routes')
-const Sandbox = require('./sandbox')
+const sandboxFactory = require('./sandbox')
 
 // Get jspm dependencies from package.json
 const appSetting = require('../package')
@@ -33,7 +33,7 @@ const app = express()
 const apiRouter = express.Router()
 
 // Create a sandbox object to record modules
-const sandbox = new Sandbox()
+const sandbox = sandboxFactory()
 
 // APP CONFIGURATION ==================
 // ====================================
@@ -61,6 +61,13 @@ routes(app, sandbox)
 // START THE SERVER
 // ====================================
 app.listen(appConfig.port, appConfig.ip, () => {
+  // eslint-disable-next-line no-console
   console.log('NODEJS-API %s running on port %d, in %s mode',
     appSetting.version, appConfig.port, app.get('env'))
 })
+
+// Export for testing
+module.exports = {
+  app,
+  sandbox
+}

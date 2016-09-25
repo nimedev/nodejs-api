@@ -29,10 +29,10 @@ module.exports = app => {
   // Compact JSON responses and the static files to GZIP format.
   app.use(compression())
 
-  // Settings for development and test environment
-  if ('development' === env || 'test' === env) {
+  // Settings for development environment
+  if (env === 'development') {
     // Log all requests to the console
-    app.use(morgan('dev'))
+    app.use(morgan('combined'))
 
     // Error handler - has to be last
     app.use(errorHandler())

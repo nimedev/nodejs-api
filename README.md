@@ -73,7 +73,7 @@ Press F5 or run debug command.
 ### Production workflow
 You can use `PM2` or other tools.
 
-### Update dependencies
+### Install/Uninstall/Update dependencies
 Follow this rules to update dependencies:
 
 - Uninstall old dependency and install again
@@ -81,13 +81,6 @@ Follow this rules to update dependencies:
 ```sh
 # cd to your project folder
 npm uninstall eslint && npm install eslint -D
-```
-
-- Update shrinkwrap file
-
-```sh
-# cd to your project folder
-npm shrinkwrap --dev
 ```
 
 ### Others scripts

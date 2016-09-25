@@ -14,5 +14,10 @@ module.exports = class extends Environment {
    */
   constructor() {
     super()
+
+    // Add '-test' suffix to uri of al DBs
+    for (let prop in this.mongo) {
+      this.mongo[prop].uri += '-test'
+    }
   }
 }

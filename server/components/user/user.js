@@ -5,9 +5,8 @@
 'use strict'
 
 // Component modules
-const userSandbox = require('./user-sandbox')
 const controller = require('./user.controller')
-const service = require('./user.service')
+const userDAO = require('./user.dao')
 
 /**
  * Load user component and try to register services in a sandbox
@@ -15,15 +14,9 @@ const service = require('./user.service')
  * @param {Object} sandbox - Reference to sandbox object
  */
 module.exports = (parentRouter, sandbox) => {
-  if (!sandbox) return console.log(`Can not register user component in sandbox`)
-
-  // Set reference to main sandbox
-  userSandbox.setMainSandbox(sandbox)
-
-  // Register services in sandbox
-  sandbox.register(service.findingUserById, 'findingUserById')
+  // Register services to share in sandbox
+  sandbox.answer('findingUserById', userDAO.findingUserById)
 
   // Attach module router to a parent router
   parentRouter.use(controller())
-  console.log('user component created!')
 }

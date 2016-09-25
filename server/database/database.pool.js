@@ -16,13 +16,13 @@ const connections = {
 
 // Export database.pool module
 // ===========================
-module.exports = {
+module.exports = Object.freeze({
   /** Create connections of available databases */
   connect,
 
   /** Object with connections to databases */
   connections
-}
+})
 
 // HELPER FUNCTIONS
 /**
