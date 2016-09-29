@@ -2,6 +2,7 @@
  * Run test for api routes.
  * @module api-test
  */
+'use strict'
 
 // Set test environment
 process.env.NODE_ENV = 'test'
@@ -14,7 +15,6 @@ const chaiHttp = require('chai-http')
 const server = require('../../server')
 
 // Config chai
-chai.should()
 chai.use(chaiHttp)
 
 // Test routes

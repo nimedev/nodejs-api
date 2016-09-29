@@ -16,7 +16,7 @@ const expect = chai.expect
  * Run test for api sandbox
  */
 module.exports = sandox => {
-  describe('sandbox content', () => {
+  describe('Sandbox content', () => {
     // Services from user component
     it('user should register services', () => {
       expect(sandox.hasAnswer('findingUserById')).to.equal(true)

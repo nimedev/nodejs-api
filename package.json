@@ -1,6 +1,6 @@
 {
   "name": "nodejs-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A starting point to implement APIs with node js",
   "main": "server",
   "scripts": {
@@ -14,8 +14,8 @@
     "update": "npm install && npm prune && npm outdated"
   },
   "pre-commit": [
-    "test",
-    "lint"
+    "lint",
+    "test"
   ],
   "repository": {
     "type": "git",
@@ -31,7 +31,8 @@
   },
   "homepage": "https://github.com/nimedev/nodejs-api#readme",
   "engines": {
-    "node": ">=6.0.0 <7.0.0"
+    "npm": ">=3.10.8",
+    "node": "6.7.0"
   },
   "dependencies": {
     "body-parser": "1.15.2",
@@ -45,9 +46,9 @@
   "devDependencies": {
     "chai": "3.5.0",
     "chai-http": "3.0.0",
-    "eslint": "https://registry.npmjs.org/eslint/-/eslint-3.5.0.tgz",
+    "eslint": "3.6.1",
     "eslint-config-nimedev": "3.0.1",
-    "mocha": "https://registry.npmjs.org/mocha/-/mocha-3.0.2.tgz",
+    "mocha": "3.1.0",
     "pre-commit": "1.1.3"
   }
 }

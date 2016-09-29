@@ -1,7 +1,14 @@
-/** @module dummy */
+/**
+ * @module dummy
+ */
 'use strict'
 
-/** Dummy middleware */
+// App modules
+const appConfig = require('../config')
+
+/**
+ * Dummy middleware
+ */
 module.exports = Object.freeze({
   /**
    * Show a dummy message in console
@@ -11,7 +18,7 @@ module.exports = Object.freeze({
    */
   useDummy: (req, res, next) => {
     // eslint-disable-next-line no-console
-    console.log('DUMMY MIDDLEWARE')
+    appConfig.env !== 'test' && console.log('DUMMY MIDDLEWARE')
     next()
   }
 })

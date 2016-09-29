@@ -1,5 +1,18 @@
 # Change Log
 
+## [1.1.0] - 2016-09-29
+
+### Added
+- Add mongoDB as a prerequisite in README.md.
+
+### Modified
+- Improve api-test descriptions.
+
+### Updated
+- Use nodejs v6.7.0.
+- Upgrade eslint and mocha packages.
+
+
 ## [1.0.0] - 2016-09-28
 
 ### Added

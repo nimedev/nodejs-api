@@ -1,12 +1,13 @@
 ## NODEJS API
 
-> A starting point to implement APIs with node js.
+> A starting point to implement APIs with NodeJS and mongoDB.
 
 
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/download/).
 - [npm](https://www.npmjs.com/), installed with Node.js.
+- [mongoDB](https://www.mongodb.com/download-center?jmp=nav#community)
 
 ## Install dependencies
 
@@ -14,9 +15,12 @@
 ```sh
 node --version
 ```
-The version should be at or above 6.x.
+The version should be at or above 6.7.0
 
-#### 2) If you don't have Node.js intalled go to [nodejs](https://nodejs.org/en/download/) and install the appropiate version or use [nvm](http://www.sergiolepore.net/2014/06/30/nvm-instalando-y-usando-node-version-manager/) (Recommended).
+If you don't have Node.js intalled go to [nodejs](https://nodejs.org/en/download/) and install the appropiate version or use [nvm](http://www.sergiolepore.net/2014/06/30/nvm-instalando-y-usando-node-version-manager/) (Recommended).
+
+#### 2) Install mongoDB
+The version should be at or above 3.
 
 #### 3) Install the workspace `npm` dependencies.
 ```sh

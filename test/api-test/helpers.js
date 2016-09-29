@@ -3,34 +3,34 @@
  * @module helpers
  * @memberOf api-test
  */
+'use strict'
 
 // npm modules
 const chai = require('chai')
+
+// Chai styles
+const expect = chai.expect
 
 /**
  * Helpers for test api module
  */
 module.exports = {
-  testPostError
+  checkRequestError
 }
 
 /**
- * Test a post error
- * @param {Object} server - reference to server app.
- * @param {string} url - POST ulr.
- * @param {Object} data - object to post.
- * @param {string} status - expected status code.
+ * Check error according with a request configuration.
+ * @param {Object} request - request configuration.
+ * @param {number} status - expected status code.
  * @param {string} error - expected name of error.
  * @param {Function} done - callback of it function.
  */
-function testPostError(server, url, data, status, error, done) {
-  chai.request(server)
-    .post(url)
-    .send(data)
+function checkRequestError(request, status, error, done) {
+  request
     .end((err, res) => {
-      res.should.have.status(status)
-      res.body.should.be.a('object')
-      res.body.should.have.property('name').eql(error)
+      expect(res).to.have.status(status)
+      expect(res.body).to.be.a('object')
+      expect(res.body).to.have.property('name').eql(error)
       done()
     })
 }
