@@ -1,6 +1,6 @@
 {
   "name": "nodejs-api",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A starting point to implement APIs with node js",
   "main": "server",
   "scripts": {
@@ -32,7 +32,7 @@
   "homepage": "https://github.com/nimedev/nodejs-api#readme",
   "engines": {
     "npm": ">=3.10.8",
-    "node": "6.7.0"
+    "node": ">=6.7.0 <7.0.0"
   },
   "dependencies": {
     "body-parser": "1.15.2",

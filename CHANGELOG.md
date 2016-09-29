@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.1.1] - 2016-09-29
+
+### Modified
+- Change nodejs version range in engines field of package.json.
+
+
 ## [1.1.0] - 2016-09-29
 
 ### Added
