@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.1.4] - 2016-09-30
+
+### Modified
+- Improve listingUsers function in user.dao module.
+
+
 ## [1.1.3] - 2016-09-30
 
 ### Modified

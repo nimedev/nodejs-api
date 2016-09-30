@@ -85,8 +85,10 @@ function findingUser(query, populate) {
 
 /**
  * Get a array of users
+ * @param {Rest params} params - extendable parameters passed to finding
+ *  function of database module (Don't pass de model).
  * @returns {Promise} Mongoose exec() promise
  */
-function listingUsers() {
-  return database.dbService.finding(User, {})
+function listingUsers(...params) {
+  return database.dbService.finding(User, ...params)
 }
