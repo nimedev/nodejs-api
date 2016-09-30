@@ -1,7 +1,7 @@
 /**
- * Helpers used in test api module
+ * Helpers used in api test
  * @module helpers
- * @memberOf api-test
+ * @memberOf ./test/api
  */
 'use strict'
 

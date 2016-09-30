@@ -8,14 +8,13 @@
 const express = require('express')
 
 // App modules
-const database = require('../../database')
 const responseError = require('../../response-error')
 
 // App middleware
 const dummy = require('../../middleware/dummy')
 
 // Component modules
-const User = require('./user.schema')
+const userDAO = require('./user.dao')
 
 // Constants & Variables
 const router = express.Router()
@@ -42,26 +41,10 @@ module.exports = () => {
       return responseError.send(res, 'InvalidRole')
     }
 
-    // Checks if the user not exists
-    database.dbService
-      .findingOne(User, { email: req.body.email })
-      .then(user => {
-        // Cancel the creation because there is a user with the same email
-        if (user) return responseError.send(res, 'EmailAlreadyExits')
-
-        // Create a new user
-        const newUser = new User({
-          email: req.body.email,
-          role: req.body.role
-        })
-
-        // Save new user and send token
-        newUser.save()
-          .then(user => {
-            res.status(201).json({ user })
-          })
-          .catch(err => responseError.send(res, err))
-      })
+    // Try to create a user
+    userDAO.creatingUser(req.body)
+      .then(user => res.status(201).json({ user }))
+      .catch(err => responseError.send(res, err))
   })
 
 
@@ -71,10 +54,10 @@ module.exports = () => {
    */
   middleware = [dummy.useDummy]
   router.get('/users', middleware, (req, res) => {
-    database.dbService
-      .finding(User, {})
+    userDAO
+      .listingUsers()
       .then(users => res.json(users))
-      .catch(err => res.status(404).json(err))
+      .catch(err => responseError.send(res, err))
   })
 
   /**
@@ -83,15 +66,10 @@ module.exports = () => {
   middleware = [dummy.useDummy]
   router.get('/users/:userID', middleware, (req, res) => {
     const userID = req.params.userID
-    database.dbService
-      .findingOne(User, { _id: userID })
-      .then(user => {
-        if(!user) return responseError.send(res, 'UserNotFound')
-
-        // Send user info
-        res.json(user)
-      })
-      .catch(err => res.status(404).json(err))
+    userDAO
+      .findingUser({ _id: userID })
+      .then(user => res.json(user))
+      .catch(err => responseError.send(res, err))
   })
 
   // Module router

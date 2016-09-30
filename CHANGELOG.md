@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.1.3] - 2016-09-30
+
+### Modified
+- Improve user.dao and user.controller.
+- Improve api test.
+
+
 ## [1.1.2] - 2016-09-29
 
 ### Updated
