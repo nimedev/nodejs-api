@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.1.2] - 2016-09-29
+
+### Updated
+- Upgrade node typings.
+
+
 ## [1.1.1] - 2016-09-29
 
 ### Modified

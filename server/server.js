@@ -40,12 +40,8 @@ const sandbox = sandboxFactory()
 // Connect to database
 database.dbPool.connect()
 
-// Populate DB with sample data
-// if(config.seedDB) { require('./config/seed') }
-
 // Setup express middleware
 configExpress(app)
-
 
 // LOAD COMPONENTS ====================
 // ====================================
