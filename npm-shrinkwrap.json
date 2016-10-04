@@ -1,6 +1,6 @@
 {
   "name": "nodejs-api",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "dependencies": {
     "accepts": {
       "version": "1.3.3",
@@ -28,9 +28,9 @@
       }
     },
     "ajv": {
-      "version": "4.7.5",
+      "version": "4.7.6",
       "from": "ajv@>=4.7.0 <5.0.0",
-      "resolved": "https://registry.npmjs.org/ajv/-/ajv-4.7.5.tgz",
+      "resolved": "https://registry.npmjs.org/ajv/-/ajv-4.7.6.tgz",
       "dev": true
     },
     "ajv-keywords": {
@@ -95,7 +95,8 @@
     "async": {
       "version": "1.5.2",
       "from": "async@1.5.2",
-      "resolved": "https://registry.npmjs.org/async/-/async-1.5.2.tgz"
+      "resolved": "https://registry.npmjs.org/async/-/async-1.5.2.tgz",
+      "dev": true
     },
     "balanced-match": {
       "version": "0.4.2",
@@ -200,9 +201,9 @@
       "dev": true
     },
     "code-point-at": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "from": "code-point-at@>=1.0.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/code-point-at/-/code-point-at-1.0.0.tgz",
+      "resolved": "https://registry.npmjs.org/code-point-at/-/code-point-at-1.0.1.tgz",
       "dev": true
     },
     "combined-stream": {
@@ -453,9 +454,9 @@
       "dev": true
     },
     "eslint": {
-      "version": "3.6.1",
+      "version": "3.7.1",
       "from": "eslint@latest",
-      "resolved": "https://registry.npmjs.org/eslint/-/eslint-3.6.1.tgz",
+      "resolved": "https://registry.npmjs.org/eslint/-/eslint-3.7.1.tgz",
       "dev": true
     },
     "eslint-config-nimedev": {
@@ -715,9 +716,9 @@
       "dev": true
     },
     "is-my-json-valid": {
-      "version": "2.14.0",
+      "version": "2.15.0",
       "from": "is-my-json-valid@>=2.10.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/is-my-json-valid/-/is-my-json-valid-2.14.0.tgz",
+      "resolved": "https://registry.npmjs.org/is-my-json-valid/-/is-my-json-valid-2.15.0.tgz",
       "dev": true
     },
     "is-path-cwd": {
@@ -786,9 +787,9 @@
       "dev": true
     },
     "jsonpointer": {
-      "version": "2.0.0",
-      "from": "jsonpointer@2.0.0",
-      "resolved": "https://registry.npmjs.org/jsonpointer/-/jsonpointer-2.0.0.tgz",
+      "version": "4.0.0",
+      "from": "jsonpointer@>=4.0.0 <5.0.0",
+      "resolved": "https://registry.npmjs.org/jsonpointer/-/jsonpointer-4.0.0.tgz",
       "dev": true
     },
     "kareem": {
@@ -803,10 +804,9 @@
       "dev": true
     },
     "lodash": {
-      "version": "4.16.2",
+      "version": "4.16.3",
       "from": "lodash@>=4.0.0 <5.0.0",
-      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.16.2.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.16.3.tgz"
     },
     "lodash._baseassign": {
       "version": "3.2.0",
@@ -947,9 +947,16 @@
       "resolved": "https://registry.npmjs.org/mongodb-core/-/mongodb-core-2.0.12.tgz"
     },
     "mongoose": {
-      "version": "4.6.1",
+      "version": "4.6.2",
       "from": "mongoose@latest",
-      "resolved": "https://registry.npmjs.org/mongoose/-/mongoose-4.6.1.tgz"
+      "resolved": "https://registry.npmjs.org/mongoose/-/mongoose-4.6.2.tgz",
+      "dependencies": {
+        "async": {
+          "version": "2.0.1",
+          "from": "async@2.0.1",
+          "resolved": "https://registry.npmjs.org/async/-/async-2.0.1.tgz"
+        }
+      }
     },
     "morgan": {
       "version": "1.7.0",
@@ -984,9 +991,9 @@
       "resolved": "https://registry.npmjs.org/ms/-/ms-0.7.1.tgz"
     },
     "muri": {
-      "version": "1.1.0",
-      "from": "muri@1.1.0",
-      "resolved": "https://registry.npmjs.org/muri/-/muri-1.1.0.tgz"
+      "version": "1.1.1",
+      "from": "muri@1.1.1",
+      "resolved": "https://registry.npmjs.org/muri/-/muri-1.1.1.tgz"
     },
     "mute-stream": {
       "version": "0.0.5",
@@ -1006,9 +1013,9 @@
       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz"
     },
     "number-is-nan": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "from": "number-is-nan@>=1.0.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/number-is-nan/-/number-is-nan-1.0.0.tgz",
+      "resolved": "https://registry.npmjs.org/number-is-nan/-/number-is-nan-1.0.1.tgz",
       "dev": true
     },
     "object-assign": {
@@ -1046,9 +1053,9 @@
       "dev": true
     },
     "os-homedir": {
-      "version": "1.0.1",
+      "version": "1.0.2",
       "from": "os-homedir@>=1.0.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/os-homedir/-/os-homedir-1.0.1.tgz",
+      "resolved": "https://registry.npmjs.org/os-homedir/-/os-homedir-1.0.2.tgz",
       "dev": true
     },
     "os-shim": {

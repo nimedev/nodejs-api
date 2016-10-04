@@ -1,5 +1,19 @@
 # Change Log
 
+## [1.2.0] - 2016-10-04
+
+### Modified
+- Remove save=true from .npmrc file.
+- Update shrink script.
+- Use schemaOptions as constant in user.schema.js file.
+- Add projection param to findingUser in user.dao file.
+- Improve response error handling.
+- Move api tests to each component or module.
+
+### Updated
+- Upgrade eslint and mongoose packages.
+
+
 ## [1.1.4] - 2016-09-30
 
 ### Modified

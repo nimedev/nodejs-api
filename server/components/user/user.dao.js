@@ -5,10 +5,10 @@
 
 // App modules
 const database = require('../../database')
-const responseError = require('../../response-error')
 
 // Component modules
 const User = require('./user.schema')
+const userError = require('./user-error.map')
 
 /**
  * Services for user module
@@ -36,7 +36,7 @@ function creatingUser(user) {
       .findingOne(User, { email: user.email })
       .then(doc => {
         // Cancel the creation because there is a user with the same email
-        if (doc) return reject(responseError.getByName('EmailAlreadyExits'))
+        if (doc) return reject(userError.get('EmailAlreadyExits'))
 
         // Create a new user
         const newUser = new User({
@@ -56,6 +56,7 @@ function creatingUser(user) {
 /**
  * Get user document by id.
  * @param {string} query - mongo query object.
+ * @param {Object} projection - optional fields to return of each doc.
  * @param {Array/Object} populate - An array or object of mongoose populate
  *  object:
     {
@@ -67,14 +68,14 @@ function creatingUser(user) {
  * @returns {Promise} Resolve if find the user. Return the finded user object.
  * Reject the promise if don't find a user or a error happends.
  */
-function findingUser(query, populate) {
+function findingUser(query, projection, populate) {
   return new Promise((resolve, reject) => {
     // Execute the query.
     database.dbService
-      .findingOne(User, query, {}, populate)
+      .findingOne(User, query, projection, populate)
       .then(user => {
         // Reject the promise if no find user and not error happends
-        if (!user) return reject(responseError.getByName('UserNotFound'))
+        if (!user) return reject(userError.get('UserNotFound'))
 
         // Otherwise resolve with user
         resolve(user)

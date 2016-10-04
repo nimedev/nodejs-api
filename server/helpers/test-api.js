@@ -1,7 +1,6 @@
 /**
- * Helpers used in api test
- * @module helpers
- * @memberOf ./test/api
+ * Helpers for test api routes
+ * @module test-api
  */
 'use strict'
 
@@ -14,9 +13,9 @@ const expect = chai.expect
 /**
  * Helpers for test api module
  */
-module.exports = {
+module.exports = Object.freeze({
   checkRequestError
-}
+})
 
 /**
  * Check error according with a request configuration.

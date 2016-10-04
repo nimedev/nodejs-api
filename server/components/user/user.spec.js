@@ -1,26 +1,23 @@
 /* global describe, before, it */
 /**
- * Test for users routes
- * @module users.spec
+ * Test for user component
+ * @module user.spec
  */
 'use strict'
 
-// Set test environment
-process.env.NODE_ENV = 'test'
+// Require first the server
+const server = require('../../server')
 
 // npm modules
 const chai = require('chai')
 const chaiHttp = require('chai-http')
 
-// Server
-const server = require('../../server')
+// App modules
+const testApiHelper = require('../../helpers/test-api')
 
-// user component modules
-const User = require('../../server/components/user/user.schema')
-const userDAO = require('../../server/components/user/user.dao')
-
-// Sibblings & Childs modules
-const helpers = require('./helpers')
+// Component modules
+const User = require('./user.schema')
+const userDAO = require('./user.dao')
 
 // Constants & variables
 const app = server.app
@@ -30,7 +27,7 @@ chai.use(chaiHttp)
 const expect = chai.expect
 
 // Parent block
-describe('User', () => {
+describe('user component', () => {
   // Remove all related with users
   before(done => {
     User.remove({}).exec()
@@ -49,14 +46,14 @@ describe('User', () => {
         role: 'user'
       }
       const request = chai.request(app).post(url).send(user)
-      helpers.checkRequestError(request, 422, 'InvalidEmail', done)
+      testApiHelper.checkRequestError(request, 422, 'InvalidEmail', done)
     })
     it('it should not POST a user without role field', done => {
       const user = {
         email: 'user@mail.com'
       }
       const request = chai.request(app).post(url).send(user)
-      helpers.checkRequestError(request, 422, 'InvalidRole', done)
+      testApiHelper.checkRequestError(request, 422, 'InvalidRole', done)
     })
 
     // Create a user
@@ -83,7 +80,7 @@ describe('User', () => {
         role: 'user'
       }
       const request = chai.request(app).post(url).send(user)
-      helpers.checkRequestError(request, 422, 'EmailAlreadyExits', done)
+      testApiHelper.checkRequestError(request, 422, 'EmailAlreadyExits', done)
     })
     it('it should POST a second admin', done => {
       const user = {
@@ -130,7 +127,7 @@ describe('User', () => {
     const url = '/api/users'
     it('it should not GET a user if not find id', done => {
       const request = chai.request(app).get(`${url}/000000000000000000000000`)
-      helpers.checkRequestError(request, 404, 'UserNotFound', done)
+      testApiHelper.checkRequestError(request, 404, 'UserNotFound', done)
     })
     it('it should GET a user by the given id', done => {
       const user = {

@@ -8,13 +8,14 @@
 const express = require('express')
 
 // App modules
-const responseError = require('../../response-error')
+const responseError = require('../../helpers/response-error')
 
 // App middleware
 const dummy = require('../../middleware/dummy')
 
 // Component modules
 const userDAO = require('./user.dao')
+const userError = require('./user-error.map')
 
 // Constants & Variables
 const router = express.Router()
@@ -33,18 +34,18 @@ module.exports = () => {
   router.post('/users', middleware, (req, res) => {
     // Validate email
     if (!req.body.email) {
-      return responseError.send(res, 'InvalidEmail')
+      return responseError(res, userError.get('InvalidEmail'))
     }
 
     // Validate role
     if (!req.body.role) {
-      return responseError.send(res, 'InvalidRole')
+      return responseError(res, userError.get('InvalidRole'))
     }
 
     // Try to create a user
     userDAO.creatingUser(req.body)
       .then(user => res.status(201).json({ user }))
-      .catch(err => responseError.send(res, err))
+      .catch(err => responseError(res, err))
   })
 
 
@@ -57,7 +58,7 @@ module.exports = () => {
     userDAO
       .listingUsers()
       .then(users => res.json(users))
-      .catch(err => responseError.send(res, err))
+      .catch(err => responseError(res, err))
   })
 
   /**
@@ -69,7 +70,7 @@ module.exports = () => {
     userDAO
       .findingUser({ _id: userID })
       .then(user => res.json(user))
-      .catch(err => responseError.send(res, err))
+      .catch(err => responseError(res, err))
   })
 
   // Module router
