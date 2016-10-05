@@ -18,7 +18,7 @@ const sandbox = server.sandbox
 const expect = chai.expect
 
 // Parent blck
-describe('components', () => {
+describe('Components module', () => {
   // Services from user component
   it('User should register services', () => {
     expect(sandbox.hasAnswer('findingUserById')).to.equal(true)

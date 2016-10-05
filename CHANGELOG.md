@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.2.1] - 2016-10-05
+
+### Modified
+- Remove reference to models in tests files.
+- Improve comments in tests descriptions.
+
+
 ## [1.2.0] - 2016-10-04
 
 ### Modified

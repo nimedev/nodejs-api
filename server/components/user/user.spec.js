@@ -16,7 +16,6 @@ const chaiHttp = require('chai-http')
 const testApiHelper = require('../../helpers/test-api')
 
 // Component modules
-const User = require('./user.schema')
 const userDAO = require('./user.dao')
 
 // Constants & variables
@@ -27,10 +26,11 @@ chai.use(chaiHttp)
 const expect = chai.expect
 
 // Parent block
-describe('user component', () => {
+describe('User component', () => {
   // Remove all related with users
   before(done => {
-    User.remove({}).exec()
+    userDAO
+      .removingAllUsers()
       .then(() => done())
   })
 

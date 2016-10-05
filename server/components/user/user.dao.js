@@ -4,6 +4,7 @@
 'use strict'
 
 // App modules
+const appConfig = require('../../config')
 const database = require('../../database')
 
 // Component modules
@@ -16,7 +17,8 @@ const userError = require('./user-error.map')
 module.exports = Object.freeze({
   creatingUser,
   findingUser,
-  listingUsers
+  listingUsers,
+  removingAllUsers: appConfig.env === 'test' ? removingAllUsers : undefined,
 })
 
 /**
@@ -92,4 +94,12 @@ function findingUser(query, projection, populate) {
  */
 function listingUsers(...params) {
   return database.dbService.finding(User, ...params)
+}
+
+/**
+ * Remove all documents (only in test environment)
+ * @returns {Promise} mongoose remove.exec() promise
+ */
+function removingAllUsers() {
+  return User.remove({}).exec()
 }
