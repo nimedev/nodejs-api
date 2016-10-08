@@ -1,5 +1,14 @@
 # Change Log
 
+## [1.2.2] - 2016-10-08
+
+### Modified
+- Improve controllers style.
+
+### Updated
+- Upgrade eslint-config-nimedev and mongoose packages.
+
+
 ## [1.2.1] - 2016-10-05
 
 ### Modified

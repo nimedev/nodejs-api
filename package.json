@@ -1,6 +1,6 @@
 {
   "name": "nodejs-api",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A starting point to implement APIs with node js",
   "main": "server",
   "scripts": {
@@ -38,14 +38,14 @@
     "cors": "2.8.1",
     "errorhandler": "1.4.3",
     "express": "4.14.0",
-    "mongoose": "4.6.2",
+    "mongoose": "4.6.3",
     "morgan": "1.7.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
     "chai-http": "3.0.0",
     "eslint": "3.7.1",
-    "eslint-config-nimedev": "3.0.1",
+    "eslint-config-nimedev": "3.1.0",
     "mocha": "3.1.0",
     "pre-commit": "1.1.3"
   }

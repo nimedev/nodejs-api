@@ -18,7 +18,7 @@ module.exports = Object.freeze({
   creatingUser,
   findingUser,
   listingUsers,
-  removingAllUsers: appConfig.env === 'test' ? removingAllUsers : undefined,
+  removingAllUsers: appConfig.env === 'test' ? removingAllUsers : undefined
 })
 
 /**
