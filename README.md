@@ -45,8 +45,12 @@ This create a `typings` folder which you can reference in your JavaScript files 
 
 ### Environment variables
 
-- Environment for server: `NODE_ENV` = 'development'
-- Port for api: `NODEJS_API_PORT` = 8080
+#### Host configuration
+- `NODE_ENV="development"`. Environment for server.
+- `NODEJS_API_PORT=8080`. Port for api.
+
+#### MongoDB configuration
+- `NODEJS_API_MONGODB_URI=undefined`. Uri for default database.
 
 To change any of this variables:
 

@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.3.0] - 2016-10-09
+
+### Modified
+- Improve config module using environment variables.
+
+
 ## [1.2.2] - 2016-10-08
 
 ### Modified
