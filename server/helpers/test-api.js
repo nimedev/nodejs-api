@@ -11,20 +11,13 @@ const chai = require('chai')
 const expect = chai.expect
 
 /**
- * Helpers for test api module
- */
-module.exports = Object.freeze({
-  checkRequestError
-})
-
-/**
  * Check error according with a request configuration.
  * @param {Object} request - request configuration.
  * @param {number} status - expected status code.
  * @param {string} error - expected name of error.
  * @param {Function} done - callback of it function.
  */
-function checkRequestError(request, status, error, done) {
+const checkRequestError = (request, status, error, done) => {
   request
     .end((err, res) => {
       expect(res).to.have.status(status)
@@ -33,3 +26,10 @@ function checkRequestError(request, status, error, done) {
       done()
     })
 }
+
+/**
+ * Helpers for test api module
+ */
+module.exports = Object.freeze({
+  checkRequestError
+})

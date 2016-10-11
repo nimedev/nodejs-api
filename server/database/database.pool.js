@@ -9,26 +9,17 @@ const mongoose = require('mongoose')
 // App modules
 const appConfig = require('../config')
 
-// Object with connections
+/**
+ * Object with connections to databases
+ */
 const connections = {
 
 }
 
-// Export database.pool module
-// ===========================
-module.exports = Object.freeze({
-  /** Create connections of available databases */
-  connect,
-
-  /** Object with connections to databases */
-  connections
-})
-
-// HELPER FUNCTIONS
 /**
  * Create connections of available databases
  */
-function connect() {
+const connect = () => {
   const mongoConnections = appConfig.mongo
   // Set mongoose promises
   mongoose.Promise = global.Promise
@@ -51,3 +42,11 @@ function connect() {
     connections[connectionName] = db
   }
 }
+
+/**
+ * database pool
+ */
+module.exports = Object.freeze({
+  connect,
+  connections
+})

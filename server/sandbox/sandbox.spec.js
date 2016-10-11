@@ -5,6 +5,9 @@
  */
 'use strict'
 
+// Set the env variable to test
+process.env.NODE_ENV = 'test'
+
 // npm modules
 const chai = require('chai')
 

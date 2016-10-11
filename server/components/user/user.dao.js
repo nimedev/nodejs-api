@@ -5,21 +5,11 @@
 
 // App modules
 const appConfig = require('../../config')
-const database = require('../../database')
+const databaseService = require('../../database').dbService
 
 // Component modules
-const User = require('./user.schema')
+const User = require('./user.model').User
 const userError = require('./user-error.map')
-
-/**
- * Services for user module
- */
-module.exports = Object.freeze({
-  creatingUser,
-  findingUser,
-  listingUsers,
-  removingAllUsers: appConfig.env === 'test' ? removingAllUsers : undefined
-})
 
 /**
  * Create a user document
@@ -31,27 +21,25 @@ module.exports = Object.freeze({
  * @returns {Promise} Resolve with the new document if can create user.
  * Reject the promise if error happends.
  */
-function creatingUser(user) {
+const creatingUser = user => {
   return new Promise((resolve, reject) => {
-    // Checks if the user not exists
-    database.dbService
-      .findingOne(User, { email: user.email })
-      .then(doc => {
-        // Cancel the creation because there is a user with the same email
-        if (doc) return reject(userError.get('EmailAlreadyExits'))
+    const newUser = new User({
+      email: user.email,
+      role: user.role
+    })
 
-        // Create a new user
-        const newUser = new User({
-          email: user.email,
-          role: user.role
-        })
-
-        // Save new user and send token
-        newUser.save()
-          .then(resolve)
-          .catch(reject)
+    // Save new user and send token
+    newUser.save()
+      .then(resolve)
+      .catch(err => {
+        // Override error if is a duplicated key error
+        if (err.code === 11000) {
+          err = databaseService
+            .validationError('email', 'User already exits', 'duplicated',
+            user.email)
+        }
+        reject(err)
       })
-      .catch(reject)
   })
 }
 
@@ -70,10 +58,10 @@ function creatingUser(user) {
  * @returns {Promise} Resolve if find the user. Return the finded user object.
  * Reject the promise if don't find a user or a error happends.
  */
-function findingUser(query, projection, populate) {
+const findingUser = (query, projection, populate) => {
   return new Promise((resolve, reject) => {
     // Execute the query.
-    database.dbService
+    databaseService
       .findingOne(User, query, projection, populate)
       .then(user => {
         // Reject the promise if no find user and not error happends
@@ -92,14 +80,24 @@ function findingUser(query, projection, populate) {
  *  function of database module (Don't pass de model).
  * @returns {Promise} Mongoose exec() promise
  */
-function listingUsers(...params) {
-  return database.dbService.finding(User, ...params)
+const listingUsers = (...params) => {
+  return databaseService.finding(User, ...params)
 }
 
 /**
  * Remove all documents (only in test environment)
  * @returns {Promise} mongoose remove.exec() promise
  */
-function removingAllUsers() {
+const removingAllUsers = () => {
   return User.remove({}).exec()
 }
+
+/**
+ * Services for user module
+ */
+module.exports = Object.freeze({
+  creatingUser,
+  findingUser,
+  listingUsers,
+  removingAllUsers: appConfig.env === 'test' ? removingAllUsers : undefined
+})

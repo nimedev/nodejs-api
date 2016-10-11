@@ -10,7 +10,7 @@
  */
 module.exports = (res, err) => {
   // If error don't have status add a 500 response code
-  const status = err.status || 500
+  const status = err.status || ((err.name === 'ValidationError') ? 422 : 500)
 
   // respose with custom error
   res.status(status).json(err)

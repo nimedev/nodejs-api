@@ -7,36 +7,45 @@
 
 - [Node.js](https://nodejs.org/en/download/).
 - [npm](https://www.npmjs.com/), installed with Node.js.
+- [yarn](https://yarnpkg.com/) a package manager for project dependencies,
 - [mongoDB](https://www.mongodb.com/download-center?jmp=nav#community)
 
 ## Install dependencies
 
-#### 1) Check Node.js version.
+#### 1) Check `Node.js` version.
 ```sh
 node --version
 ```
 The version should be at or above 6.7.0
 
-If you don't have Node.js intalled go to [nodejs](https://nodejs.org/en/download/) and install the appropiate version or use [nvm](http://www.sergiolepore.net/2014/06/30/nvm-instalando-y-usando-node-version-manager/) (Recommended).
+If you don't have Node.js installed go to [nodejs](https://nodejs.org/en/download/) and install the appropiate version or use [nvm](http://www.sergiolepore.net/2014/06/30/nvm-instalando-y-usando-node-version-manager/) (Recommended).
 
-#### 2) Install mongoDB
+#### 2) Install `mongoDB`
 The version should be at or above 3.
 
-#### 3) Install the workspace `npm` dependencies.
+#### 3) Check `yarn`
+```sh
+yarn --version
+```
+The version should be at or above 0.15.1
+
+If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/install) and install the appropiate version.
+
+#### 5) Install the workspace dependencies.
 ```sh
 # cd to your project folder
-npm install
+yarn
 ```
 
-#### 4) (Development) Install a manager for TypeScript definitions `typings`.
+#### 6) (Development) Install a manager for TypeScript definitions `typings`.
 You can use `typings` for intellisense (I use this in VScode).
 
 ```sh
 # install typings globally
-npm install typings -g
+yarn global add typings
 
 # cd to your project folder
-npm run typings
+yarn run typings
 ```
 This create a `typings` folder which you can reference in your JavaScript files to get intellisense.
 
@@ -60,16 +69,16 @@ export NODEJS_API_PORT=8000
 
 ### Development workflow
 
-#### Start the server with npm
+#### Start the server with yarn
 ```sh
 # cd to your project folder
-npm start
+yarn start
 ```
 
 #### Server with nodemon tool
 ```sh
 # install nodemon globally
-npm install nodemon -g
+yarn global add nodemon
 # cd to your project folder
 nodemon
 ```
@@ -84,12 +93,27 @@ You can use `PM2` or other tools.
 ### Install/Uninstall/Update dependencies
 Follow this rules to update dependencies:
 
-- Uninstall old dependency and install again
+- Install dependencies
+
+```sh
+# To install production dependencies
+# cd to your project folder
+yarn add express --exact
+```
+```sh
+# To install development dependencies
+# cd to your project folder
+yarn add eslint --exact --dev
+```
+
+- Uninstall dependencies
 
 ```sh
 # cd to your project folder
-npm uninstall eslint && npm install eslint -D
+yarn remove express
 ```
+
+- **To Upgrade any dependencies follow `Uninstall dependencies` step and install again like `Install dependencies`.**
 
 ### Others scripts
 
@@ -97,7 +121,7 @@ To run eslint in console type:
 
 ```sh
 # cd to your project folder
-npm run lint
+yarn run lint
 ```
 
 ## Editors

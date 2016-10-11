@@ -8,15 +8,10 @@
 const mongoose = require('mongoose')
 
 // App modules
-const database = require('../../database')
+const database = require('../../../database')
 
 // Constants & Variables
 const Schema = mongoose.Schema
-const schemaOptions = {
-  toObject: { virtuals: true },
-  toJSON: { virtuals: true },
-  autoIndex: false
-}
 
 // Get database connection from a pool
 const db = database.dbPool.connections.default
@@ -39,7 +34,9 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   }
-}, schemaOptions) // EoS
+}) // EoS
 
-/** User mongoose model */
+/**
+ * User mongoose model
+ */
 module.exports = db.model('User', UserSchema)

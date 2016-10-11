@@ -15,7 +15,6 @@ const dummy = require('../../middleware/dummy')
 
 // Component modules
 const userDAO = require('./user.dao')
-const userError = require('./user-error.map')
 
 // Constants & Variables
 const router = express.Router()
@@ -29,16 +28,6 @@ module.exports = () => {
   // Create component routes
   router
     .post('/users', dummyMiddleware, (req, res) => {
-      // Validate email
-      if (!req.body.email) {
-        return responseError(res, userError.get('InvalidEmail'))
-      }
-
-      // Validate role
-      if (!req.body.role) {
-        return responseError(res, userError.get('InvalidRole'))
-      }
-
       // Try to create a user
       userDAO.creatingUser(req.body)
         .then(user => res.status(201).json({ user }))

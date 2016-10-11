@@ -1,5 +1,19 @@
 # Change Log
 
+## [2.0.0] - 2016-10-12
+
+### Modified
+- Improme schema validation.
+- Replace npm with yarn.
+- Rebase structure in some modules.
+- Group user schema in user.model module.
+- Add NODE_ENV=test to tests files.
+- Improve config module.
+
+### Updated
+- Upgrade mocha package.
+
+
 ## [1.3.0] - 2016-10-09
 
 ### Modified

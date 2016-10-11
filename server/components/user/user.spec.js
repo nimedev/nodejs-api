@@ -5,7 +5,8 @@
  */
 'use strict'
 
-// Require first the server
+// Set the env variable to test and load server
+process.env.NODE_ENV = 'test'
 const server = require('../../server')
 
 // npm modules
@@ -41,19 +42,24 @@ describe('User component', () => {
     const url = '/api/users'
 
     // Error responses
+    it('it should not POST a user without any data', done => {
+      const user = {}
+      const request = chai.request(app).post(url).send(user)
+      testApiHelper.checkRequestError(request, 422, 'ValidationError', done)
+    })
     it('it should not POST a user without email field', done => {
       const user = {
         role: 'user'
       }
       const request = chai.request(app).post(url).send(user)
-      testApiHelper.checkRequestError(request, 422, 'InvalidEmail', done)
+      testApiHelper.checkRequestError(request, 422, 'ValidationError', done)
     })
     it('it should not POST a user without role field', done => {
       const user = {
         email: 'user@mail.com'
       }
       const request = chai.request(app).post(url).send(user)
-      testApiHelper.checkRequestError(request, 422, 'InvalidRole', done)
+      testApiHelper.checkRequestError(request, 422, 'ValidationError', done)
     })
 
     // Create a user
@@ -80,7 +86,7 @@ describe('User component', () => {
         role: 'user'
       }
       const request = chai.request(app).post(url).send(user)
-      testApiHelper.checkRequestError(request, 422, 'EmailAlreadyExits', done)
+      testApiHelper.checkRequestError(request, 422, 'ValidationError', done)
     })
     it('it should POST a second admin', done => {
       const user = {
