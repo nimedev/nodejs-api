@@ -12,17 +12,33 @@ const expect = chai.expect
 
 /**
  * Check error according with a request configuration.
+ *
  * @param {Object} request - request configuration.
  * @param {number} status - expected status code.
  * @param {string} error - expected name of error.
  * @param {Function} done - callback of it function.
+ * @param {Array} errors - expected fields in errors object of error
+ *  (Used in ValidationError object)
  */
-const checkRequestError = (request, status, error, done) => {
+const checkRequestError = (request, status, error, errors, done) => {
+  if (typeof errors === 'function') {
+    done = errors
+    errors = []
+  }
   request
     .end((err, res) => {
       expect(res).to.have.status(status)
       expect(res.body).to.be.a('object')
       expect(res.body).to.have.property('name').eql(error)
+
+      // Validate all errors if have a errors objects
+      if (res.body.errors) {
+        expect(res.body).to.have.property('errors')
+        const errorsFields = Object.keys(res.body.errors)
+        for (let field of errorsFields) {
+          expect(!!~errors.indexOf(field)).to.be.eql(true)
+        }
+      }
       done()
     })
 }

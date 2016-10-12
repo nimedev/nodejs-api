@@ -7,8 +7,8 @@
 
 - [Node.js](https://nodejs.org/en/download/).
 - [npm](https://www.npmjs.com/), installed with Node.js.
-- [yarn](https://yarnpkg.com/) a package manager for project dependencies,
-- [mongoDB](https://www.mongodb.com/download-center?jmp=nav#community)
+- [yarn](https://yarnpkg.com/) a package manager for project dependencies.
+- [mongoDB](https://www.mongodb.com/download-center?jmp=nav#community).
 
 ## Install dependencies
 
@@ -23,7 +23,7 @@ If you don't have Node.js installed go to [nodejs](https://nodejs.org/en/downloa
 #### 2) Install `mongoDB`
 The version should be at or above 3.
 
-#### 3) Check `yarn`
+#### 3) Check `yarn` version.
 ```sh
 yarn --version
 ```
@@ -85,7 +85,6 @@ nodemon
 
 #### Debug with vscode
 Press F5 or run debug command.
-
 
 ### Production workflow
 You can use `PM2` or other tools.

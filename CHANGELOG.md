@@ -1,5 +1,11 @@
 # Change Log
 
+## [2.1.0] - 2016-10-12
+
+### Modified
+- Improve validation of error in api-test helper.
+
+
 ## [2.0.1] - 2016-10-12
 
 ### Fix

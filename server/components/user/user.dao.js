@@ -11,6 +11,9 @@ const databaseService = require('../../database').dbService
 const User = require('./user.model').User
 const userError = require('./user-error.map')
 
+// Constants & Variables
+const validationError = databaseService.validationError
+
 /**
  * Create a user document
  * @param {Object} user - data of the user to create:
@@ -34,9 +37,9 @@ const creatingUser = user => {
       .catch(err => {
         // Override error if is a duplicated key error
         if (err.code === 11000) {
-          err = databaseService
-            .validationError('email', 'User already exits', 'duplicated',
-            user.email)
+          err = validationError(
+            'email', 'User already exits', 'duplicated', user.email
+          )
         }
         reject(err)
       })

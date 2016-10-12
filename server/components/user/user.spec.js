@@ -14,7 +14,7 @@ const chai = require('chai')
 const chaiHttp = require('chai-http')
 
 // App modules
-const testApiHelper = require('../../helpers/test-api')
+const checkRequestError = require('../../helpers/test-api').checkRequestError
 
 // Component modules
 const userDAO = require('./user.dao')
@@ -44,22 +44,9 @@ describe('User component', () => {
     // Error responses
     it('it should not POST a user without any data', done => {
       const user = {}
+      const expectedFields = ['email', 'role']
       const request = chai.request(app).post(url).send(user)
-      testApiHelper.checkRequestError(request, 422, 'ValidationError', done)
-    })
-    it('it should not POST a user without email field', done => {
-      const user = {
-        role: 'user'
-      }
-      const request = chai.request(app).post(url).send(user)
-      testApiHelper.checkRequestError(request, 422, 'ValidationError', done)
-    })
-    it('it should not POST a user without role field', done => {
-      const user = {
-        email: 'user@mail.com'
-      }
-      const request = chai.request(app).post(url).send(user)
-      testApiHelper.checkRequestError(request, 422, 'ValidationError', done)
+      checkRequestError(request, 422, 'ValidationError', expectedFields, done)
     })
 
     // Create a user
@@ -85,8 +72,9 @@ describe('User component', () => {
         email: 'user@mail.test',
         role: 'user'
       }
+      const expectedFields = ['email']
       const request = chai.request(app).post(url).send(user)
-      testApiHelper.checkRequestError(request, 422, 'ValidationError', done)
+      checkRequestError(request, 422, 'ValidationError', expectedFields, done)
     })
     it('it should POST a second admin', done => {
       const user = {
@@ -133,7 +121,7 @@ describe('User component', () => {
     const url = '/api/users'
     it('it should not GET a user if not find id', done => {
       const request = chai.request(app).get(`${url}/000000000000000000000000`)
-      testApiHelper.checkRequestError(request, 404, 'UserNotFound', done)
+      checkRequestError(request, 404, 'UserNotFound', done)
     })
     it('it should GET a user by the given id', done => {
       const user = {
