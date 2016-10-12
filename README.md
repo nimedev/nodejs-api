@@ -31,13 +31,13 @@ The version should be at or above 0.15.1
 
 If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/install) and install the appropiate version.
 
-#### 5) Install the workspace dependencies.
+#### 4) Install the workspace dependencies.
 ```sh
 # cd to your project folder
 yarn
 ```
 
-#### 6) (Development) Install a manager for TypeScript definitions `typings`.
+#### 5) (Development) Install a manager for TypeScript definitions `typings`.
 You can use `typings` for intellisense (I use this in VScode).
 
 ```sh

@@ -1,5 +1,11 @@
 # Change Log
 
+## [2.0.1] - 2016-10-12
+
+### Fix
+- Fix installation order in README.md file.
+
+
 ## [2.0.0] - 2016-10-12
 
 ### Modified
