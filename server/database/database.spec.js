@@ -18,7 +18,7 @@ const dbService = require('./database.service')
 const expect = chai.expect
 
 // Parent block
-describe('database modules', () => {
+describe('database module', () => {
   it('it should be create a custom error with mongoose style', () => {
     const path = 'email'
     const message = 'Custom error'

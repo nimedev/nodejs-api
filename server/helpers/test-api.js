@@ -35,6 +35,7 @@ const checkRequestError = (request, status, error, errors, done) => {
       if (res.body.errors) {
         expect(res.body).to.have.property('errors')
         const errorsFields = Object.keys(res.body.errors)
+        expect(errorsFields.length).to.be.eql(errors.length)
         for (let field of errorsFields) {
           expect(!!~errors.indexOf(field)).to.be.eql(true)
         }

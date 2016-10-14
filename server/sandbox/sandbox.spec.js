@@ -18,7 +18,7 @@ const sandboxFactory = require('./sandbox')
 const expect = chai.expect
 
 // Test
-describe('Sandbox module', () => {
+describe('sandbox module', () => {
   const sandbox = sandboxFactory()
   it('register a question', () => {
     // Try to save a function

@@ -26,10 +26,7 @@ const validationError = databaseService.validationError
  */
 const creatingUser = user => {
   return new Promise((resolve, reject) => {
-    const newUser = new User({
-      email: user.email,
-      role: user.role
-    })
+    const newUser = new User(user)
 
     // Save new user and send token
     newUser.save()

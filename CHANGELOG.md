@@ -1,5 +1,15 @@
 # Change Log
 
+## [2.2.0] - 2016-10-13
+
+### Modified
+- Add validation to test-api helper.
+- Improve test descriptions.
+
+### Updated
+- Use nodejs v6.8.0 and npm >=3.10.8
+
+
 ## [2.1.0] - 2016-10-12
 
 ### Modified
