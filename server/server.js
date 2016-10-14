@@ -58,8 +58,12 @@ routes(app, sandbox)
 // ====================================
 app.listen(appConfig.port, appConfig.ip, () => {
   // eslint-disable-next-line no-console
-  console.log('NODEJS-API %s running on port %d, in %s mode',
-    appSetting.version, appConfig.port, app.get('env'))
+  console.log(
+    `NODEJS-API ${appSetting.version}
+Port: ${appConfig.port}
+Environment: ${app.get('env')}
+NodeJS: ${process.version}`
+  )
 })
 
 // Export for testing

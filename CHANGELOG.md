@@ -1,5 +1,11 @@
 # Change Log
 
+## [2.2.1] - 2016-10-14
+
+### Modified
+- Sanitize user before create it.
+
+
 ## [2.2.0] - 2016-10-13
 
 ### Modified

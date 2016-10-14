@@ -26,6 +26,8 @@ const validationError = databaseService.validationError
  */
 const creatingUser = user => {
   return new Promise((resolve, reject) => {
+    // Create a new user
+    delete user._id
     const newUser = new User(user)
 
     // Save new user and send token
