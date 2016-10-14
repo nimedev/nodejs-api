@@ -1,5 +1,11 @@
 # Change Log
 
+## [2.2.2] - 2016-10-14
+
+### Added
+- Add .nvmrc file.
+
+
 ## [2.2.1] - 2016-10-14
 
 ### Modified
