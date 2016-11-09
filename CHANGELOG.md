@@ -1,5 +1,14 @@
 # Change Log
 
+## [2.3.0] - 2016-11-09
+
+### Deleted
+- Remove typings.
+
+### Updated
+- Upgrade mongoose and eslint.
+
+
 ## [2.2.2] - 2016-10-14
 
 ### Added
