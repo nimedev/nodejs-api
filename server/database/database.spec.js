@@ -8,10 +8,7 @@
 // Set the env variable to test
 process.env.NODE_ENV = 'test'
 
-// npm modules
 const chai = require('chai')
-
-// module to test
 const dbService = require('./database.service')
 
 // Chai styles

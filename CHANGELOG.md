@@ -1,5 +1,14 @@
 # Change Log
 
+## [2.4.0] - 2016-11-16
+
+### Modified
+- Improve user tests.
+
+### Updated
+- Upgrade eslint, mongoose and errorhandler.
+
+
 ## [2.3.0] - 2016-11-09
 
 ### Deleted

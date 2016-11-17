@@ -1,25 +1,19 @@
 /* global describe, before, it */
 /**
  * Test for user component
- * @module user.spec
+ * @module user-routes.spec
  */
 'use strict'
 
 // Set the env variable to test and load server
 process.env.NODE_ENV = 'test'
-const server = require('../../server')
+const server = require('../../../server')
 
-// npm modules
 const chai = require('chai')
 const chaiHttp = require('chai-http')
+const checkRequestError = require('../../../helpers/test-api').checkRequestError
+const userDAO = require('../user.dao')
 
-// App modules
-const checkRequestError = require('../../helpers/test-api').checkRequestError
-
-// Component modules
-const userDAO = require('./user.dao')
-
-// Constants & variables
 const app = server.app
 
 // Chai styles
@@ -27,7 +21,7 @@ chai.use(chaiHttp)
 const expect = chai.expect
 
 // Parent block
-describe('User component', () => {
+describe('User routes', () => {
   // Remove all related with users
   before(done => {
     userDAO

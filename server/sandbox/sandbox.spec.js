@@ -8,10 +8,7 @@
 // Set the env variable to test
 process.env.NODE_ENV = 'test'
 
-// npm modules
 const chai = require('chai')
-
-// module to test
 const sandboxFactory = require('./sandbox')
 
 // Chai styles
