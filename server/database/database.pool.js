@@ -3,24 +3,19 @@
  * @module database.pool
  */
 
-// npm modules
 const mongoose = require('mongoose')
-
-// App modules
-const appConfig = require('../config')
+const dbConfig = require('./database.config')
 
 /**
  * Object with connections to databases
  */
-const connections = {
-
-}
+const connections = {}
 
 /**
  * Create connections of available databases
  */
 const connect = () => {
-  const mongoConnections = appConfig.mongo
+  const mongoConnections = dbConfig.connections
   // Set mongoose promises
   mongoose.Promise = global.Promise
 

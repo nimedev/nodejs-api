@@ -1,5 +1,11 @@
 # Change Log
 
+## [3.0.0] - 2016-11-20
+
+### Modified
+- Rebase database module and put database configuration in database module.
+
+
 ## [2.4.0] - 2016-11-16
 
 ### Modified

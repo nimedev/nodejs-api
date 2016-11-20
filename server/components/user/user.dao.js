@@ -3,16 +3,12 @@
  */
 'use strict'
 
-// App modules
 const appConfig = require('../../config')
-const databaseService = require('../../database').dbService
-
-// Component modules
+const dbService = require('../../database').service
 const User = require('./user.model').User
 const userError = require('./user-error.map')
 
-// Constants & Variables
-const validationError = databaseService.validationError
+const validationError = dbService.validationError
 
 /**
  * Create a user document
@@ -63,7 +59,7 @@ const creatingUser = user => {
 const findingUser = (query, projection, populate) => {
   return new Promise((resolve, reject) => {
     // Execute the query.
-    databaseService
+    dbService
       .findingOne(User, query, projection, populate)
       .then(user => {
         // Reject the promise if no find user and not error happends
@@ -83,7 +79,7 @@ const findingUser = (query, projection, populate) => {
  * @returns {Promise} Mongoose exec() promise
  */
 const listingUsers = (...params) => {
-  return databaseService.finding(User, ...params)
+  return dbService.finding(User, ...params)
 }
 
 /**

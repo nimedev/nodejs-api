@@ -14,7 +14,7 @@ const database = require('../../../database')
 const Schema = mongoose.Schema
 
 // Get database connection from a pool
-const db = database.dbPool.connections.default
+const db = database.pool.connections.default
 
 // User schema
 const UserSchema = new Schema({

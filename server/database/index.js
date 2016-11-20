@@ -1,13 +1,14 @@
-/** @module database */
+/**
+ * @module database
+ */
 
-// Modules to export
-const dbPool = require('./database.pool')
-const dbService = require('./database.service')
+const pool = require('./database.pool')
+const service = require('./database.service')
 
 module.exports = Object.freeze({
   /** Pool of connections to application databases */
-  dbPool,
+  pool,
 
   /** Common actions for crud operations */
-  dbService
+  service
 })

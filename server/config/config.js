@@ -3,9 +3,6 @@
  */
 'use strict'
 
-// Submodules
-const mongo = require('./mongo')
-
 /**
  * Settings for API
  */
@@ -18,14 +15,5 @@ module.exports = Object.freeze({
   process.env.NODEJS_API_PORT || process.env.PORT || 8080,
 
   // Server IP
-  ip: process.env.OPENSHIFT_NODEJS_IP || process.env.IP || undefined,
-
-  // MongoDB connection options
-  mongo,
-
-  // Settings for database
-  database: {
-    // Max of documents in find query
-    limit: 100
-  }
+  ip: process.env.OPENSHIFT_NODEJS_IP || process.env.IP || undefined
 })
