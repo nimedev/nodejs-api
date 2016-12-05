@@ -27,7 +27,7 @@ The version should be at or above 3.
 ```sh
 yarn --version
 ```
-The version should be at or above 0.15.1
+The version should be at or above 0.18.0
 
 If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/install) and install the appropiate version.
 

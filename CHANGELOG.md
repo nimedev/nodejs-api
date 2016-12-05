@@ -1,5 +1,11 @@
 # Change Log
 
+## [3.1.0] - 2016-12-05
+
+### Updated
+- Upgrade mongoose, eslint and mocha.
+
+
 ## [3.0.0] - 2016-11-20
 
 ### Modified
