@@ -1,5 +1,12 @@
 # Change Log
 
+## [3.1.1] - 2016-12-12
+
+### Updated
+- Upgrade mongoose and eslint.
+- Use node 6.9.2.
+
+
 ## [3.1.0] - 2016-12-05
 
 ### Updated
