@@ -3,6 +3,7 @@
  * Test for database module
  * @module database.spec
  */
+
 'use strict'
 
 // Set the env variable to test

@@ -1,6 +1,7 @@
 /**
  * @module dummy
  */
+
 'use strict'
 
 // App modules

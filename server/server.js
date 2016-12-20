@@ -2,13 +2,14 @@
  * Main application file
  * @module server
  */
+
 'use strict'
 
 // Set default node environment to development
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
 // Set root application path in global object
-global.__baseDir = __dirname
+global.baseDir = __dirname
 
 // BASE SETUP
 // ======================================

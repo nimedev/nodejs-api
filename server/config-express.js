@@ -2,6 +2,7 @@
  * Set global middleware for all app
  * @module config-express
  */
+
 'use strict'
 
 // npm modules
@@ -14,7 +15,7 @@ const morgan = require('morgan')
 /**
  * Set express middleware
  */
-module.exports = app => {
+module.exports = (app) => {
   const env = app.get('env')
 
   // Use body parser so we can grab information from POST requests

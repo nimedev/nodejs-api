@@ -3,6 +3,7 @@
  * to record all the modules of the application.
  * @module sandbox
  */
+
 'use strict'
 
 /**
@@ -14,6 +15,13 @@ module.exports = function sandboxFactory() {
 
   // Map used to save something to share
   const questions = new Map()
+
+
+  /**
+   * @param {string} question - string to identify the question.
+   * @returns {boolean} true if the question is in the sandbox.
+   */
+  const hasAnswer = question => questions.has(question)
 
   /**
    * Resgister an answer to a question,
@@ -41,8 +49,8 @@ module.exports = function sandboxFactory() {
    * @returns {any} the result of callback execution.
    */
   const ask = (question, ...data) => {
-    const answer = questions.get(question)
-    if (typeof answer === 'function') return answer(...data)
+    const cb = questions.get(question)
+    if (typeof cb === 'function') return cb(...data)
     return null
   }
 
@@ -51,18 +59,10 @@ module.exports = function sandboxFactory() {
    * @param {string} question - string to identify the question
    * @returns {any} the answer to a question if value is diferent to a Function
    */
-  const askValue = question => {
-    const answer = questions.get(question)
-    if (typeof answer !== 'function') return answer
+  const askValue = (question) => {
+    const cb = questions.get(question)
+    if (typeof cb !== 'function') return cb
     return undefined
-  }
-
-  /**
-   * @param {string} question - string to identify the question.
-   * @returns {boolean} true if the question is in the sandbox.
-   */
-  const hasAnswer = question => {
-    return questions.has(question)
   }
 
   /**

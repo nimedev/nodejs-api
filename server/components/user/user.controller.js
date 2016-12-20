@@ -2,21 +2,14 @@
  * Group users routes in one express router
  * @module user.controller
  */
+
 'use strict'
 
-// npm modules
 const express = require('express')
-
-// App modules
 const responseError = require('../../helpers/response-error')
-
-// App middleware
 const dummy = require('../../middleware/dummy')
-
-// Component modules
 const userDAO = require('./user.dao')
 
-// Constants & Variables
 const router = express.Router()
 
 /**

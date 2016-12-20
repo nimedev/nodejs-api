@@ -1,5 +1,14 @@
 # Change Log
 
+## [3.2.0] - 2016-12-20
+
+### Added
+- Implement eslint-config-nimedev-node.
+
+### Updated
+- Upgrade mongoose, eslint and pre-commit.
+
+
 ## [3.1.1] - 2016-12-12
 
 ### Updated

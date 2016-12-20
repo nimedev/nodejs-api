@@ -1,6 +1,7 @@
 /**
  * @module user.dao
  */
+
 'use strict'
 
 const appConfig = require('../../config')
@@ -20,8 +21,8 @@ const validationError = dbService.validationError
  * @returns {Promise} Resolve with the new document if can create user.
  * Reject the promise if error happends.
  */
-const creatingUser = user => {
-  return new Promise((resolve, reject) => {
+const creatingUser = user => (
+  new Promise((resolve, reject) => {
     // Create a new user
     delete user._id
     const newUser = new User(user)
@@ -29,17 +30,17 @@ const creatingUser = user => {
     // Save new user and send token
     newUser.save()
       .then(resolve)
-      .catch(err => {
+      .catch((err) => {
+        let newErr = err
+
         // Override error if is a duplicated key error
         if (err.code === 11000) {
-          err = validationError(
-            'email', 'User already exits', 'duplicated', user.email
-          )
+          newErr = validationError('email', 'User already exits', 'duplicated', user.email)
         }
-        reject(err)
+        reject(newErr)
       })
   })
-}
+)
 
 /**
  * Get user document by id.
@@ -56,21 +57,21 @@ const creatingUser = user => {
  * @returns {Promise} Resolve if find the user. Return the finded user object.
  * Reject the promise if don't find a user or a error happends.
  */
-const findingUser = (query, projection, populate) => {
-  return new Promise((resolve, reject) => {
+const findingUser = (query, projection, populate) => (
+  new Promise((resolve, reject) => {
     // Execute the query.
     dbService
       .findingOne(User, query, projection, populate)
-      .then(user => {
+      .then((user) => {
         // Reject the promise if no find user and not error happends
         if (!user) return reject(userError.get('UserNotFound'))
 
         // Otherwise resolve with user
-        resolve(user)
+        return resolve(user)
       })
       .catch(reject)
   })
-}
+)
 
 /**
  * Get a array of users
@@ -78,17 +79,13 @@ const findingUser = (query, projection, populate) => {
  *  function of database module (Don't pass de model).
  * @returns {Promise} Mongoose exec() promise
  */
-const listingUsers = (...params) => {
-  return dbService.finding(User, ...params)
-}
+const listingUsers = (...params) => dbService.finding(User, ...params)
 
 /**
  * Remove all documents (only in test environment)
  * @returns {Promise} mongoose remove.exec() promise
  */
-const removingAllUsers = () => {
-  return User.remove({}).exec()
-}
+const removingAllUsers = () => User.remove({}).exec()
 
 /**
  * Services for user module

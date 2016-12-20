@@ -2,9 +2,9 @@
  * Helpers for test api routes
  * @module test-api
  */
+
 'use strict'
 
-// npm modules
 const chai = require('chai')
 
 // Chai styles
@@ -12,7 +12,6 @@ const expect = chai.expect
 
 /**
  * Check error according with a request configuration.
- *
  * @param {Object} request - request configuration.
  * @param {number} status - expected status code.
  * @param {string} error - expected name of error.
@@ -21,10 +20,6 @@ const expect = chai.expect
  *  (Used in ValidationError object)
  */
 const checkRequestError = (request, status, error, errors, done) => {
-  if (typeof errors === 'function') {
-    done = errors
-    errors = []
-  }
   request
     .end((err, res) => {
       expect(res).to.have.status(status)
@@ -36,9 +31,7 @@ const checkRequestError = (request, status, error, errors, done) => {
         expect(res.body).to.have.property('errors')
         const errorsFields = Object.keys(res.body.errors)
         expect(errorsFields.length).to.be.eql(errors.length)
-        for (let field of errorsFields) {
-          expect(!!~errors.indexOf(field)).to.be.eql(true)
-        }
+        errorsFields.map(field => expect(!!~errors.indexOf(field)).to.be.eql(true))
       }
       done()
     })

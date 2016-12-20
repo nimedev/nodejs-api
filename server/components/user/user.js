@@ -2,6 +2,7 @@
  * Prepare component for users routes
  * @module user
  */
+
 'use strict'
 
 // Component modules

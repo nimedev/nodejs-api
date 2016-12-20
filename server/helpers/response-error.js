@@ -1,6 +1,7 @@
 /**
  * @module response-error
  */
+
 'use strict'
 
 /**

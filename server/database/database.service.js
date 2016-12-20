@@ -2,6 +2,7 @@
  * Common actions for crud operations
  * @module database
  */
+
 'use strict'
 
 const mongoose = require('mongoose')
@@ -24,20 +25,18 @@ const mongoose = require('mongoose')
  */
 const finding = (model, query, projection = {}, populate = [], sort = {},
   paging = {}) => {
-  populate = (Array.isArray(populate)) ? populate : [populate]
   const cursor = model.find(query, projection)
+  const popArray = Array.isArray(populate) ? populate : [populate]
 
   // Check if populate
-  for (let obj of populate) {
-    cursor.populate(obj.property, obj.projection)
-  }
+  popArray.map(obj => cursor.populate(obj.property, obj.projection))
 
   // Add sort method
   cursor.sort(sort)
 
   // Paging configuration
   paging.page && paging.size && cursor.skip((paging.page - 1) * paging.size)
-  paging.size && cursor.limit(parseInt(paging.size))
+  paging.size && cursor.limit(parseInt(paging.size, 10))
 
   // Return the query
   return cursor.exec()
@@ -61,12 +60,10 @@ const finding = (model, query, projection = {}, populate = [], sort = {},
   */
 const findingOne = (model, query, projection = {}, populate = []) => {
   const cursor = model.findOne(query, projection)
-  populate = Array.isArray(populate) ? populate : [populate]
+  const popArray = Array.isArray(populate) ? populate : [populate]
 
   // Check if populate
-  for (let pathObj of populate) {
-    cursor.populate(pathObj)
-  }
+  popArray.map(obj => cursor.populate(obj.property, obj.projection))
 
   // Return the query
   return cursor.exec()
@@ -83,7 +80,12 @@ const validationError = (path, message, type, value) => {
   const ValidationError = mongoose.Error.ValidationError
   const ValidatorError = mongoose.Error.ValidatorError
   const error = new ValidationError(null)
-  error.errors[path] = new ValidatorError({ path, message, type, value })
+  error.errors[path] = new ValidatorError({
+    path,
+    message,
+    type,
+    value
+  })
   return error
 }
 

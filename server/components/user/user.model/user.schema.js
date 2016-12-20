@@ -2,15 +2,12 @@
  * Mongoose schema for users
  * @module user.schema
  */
+
 'use strict'
 
-// npm modules
 const mongoose = require('mongoose')
-
-// App modules
 const database = require('../../../database')
 
-// Constants & Variables
 const Schema = mongoose.Schema
 
 // Get database connection from a pool
@@ -34,7 +31,7 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   }
-}) // EoS
+})
 
 /**
  * User mongoose model

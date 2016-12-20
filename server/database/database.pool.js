@@ -16,11 +16,11 @@ const connections = {}
  */
 const connect = () => {
   const mongoConnections = dbConfig.connections
-  // Set mongoose promises
+    // Set mongoose promises
   mongoose.Promise = global.Promise
 
   // Make connections that are in application config
-  for (let connectionName in mongoConnections) {
+  Object.keys(mongoConnections).map((connectionName) => {
     const uri = mongoConnections[connectionName].uri
     const options = mongoConnections[connectionName].options
 
@@ -28,14 +28,15 @@ const connect = () => {
     const db = mongoose.createConnection(uri, options)
 
     // Asign a error handler for this connection
-    db.on('error', err => {
-      console.error('MongoDB connection error: ' + err)
+    db.on('error', (err) => {
+      console.error(`MongoDB connection error: ${err}`)
       process.exit(-1)
     })
 
     // Save the connection in a pool
     connections[connectionName] = db
-  }
+    return db
+  })
 }
 
 /**

@@ -3,6 +3,10 @@
  * @module components
  */
 
+'use strict'
+
+/* eslint-disable global-require */
+
 /**
  * Initialize components
  * @param {Object} parentRouter - express router to attach module router

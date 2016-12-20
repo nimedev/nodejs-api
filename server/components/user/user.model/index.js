@@ -1,6 +1,7 @@
 /**
  * @module user.model
  */
+
 'use strict'
 
 // Submodules
