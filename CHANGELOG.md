@@ -1,5 +1,11 @@
 # Change Log
 
+## [3.2.1] - 2016-12-27
+
+### Updated
+- Upgrade mongoose.
+
+
 ## [3.2.0] - 2016-12-20
 
 ### Added
