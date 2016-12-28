@@ -3,8 +3,6 @@
  * @module user-error.map
  */
 
-'use strict'
-
 // Create custom errors
 const errors = new Map([
   /** Could not find the user */

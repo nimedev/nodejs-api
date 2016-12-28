@@ -2,8 +2,6 @@
  * @module user.model
  */
 
-'use strict'
-
 // Submodules
 const User = require('./user.schema')
 

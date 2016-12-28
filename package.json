@@ -1,6 +1,6 @@
 {
   "name": "nodejs-api",
-  "version": "3.2.1",
+  "version": "4.0.0",
   "description": "A starting point to implement APIs with node js",
   "main": "server",
   "scripts": {
@@ -42,8 +42,7 @@
     "chai": "3.5.0",
     "chai-http": "3.0.0",
     "eslint": "3.12.2",
-    "eslint-config-airbnb-base": "11.0.0",
-    "eslint-config-nimedev-node": "3.0.0",
+    "eslint-config-nimedev-base": "1.0.0",
     "eslint-plugin-import": "2.2.0",
     "mocha": "3.2.0",
     "pre-commit": "1.2.2"

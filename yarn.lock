@@ -446,13 +446,9 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-airbnb-base@11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-11.0.0.tgz#a3eddc1e49fd6492509d582340fd6f58785623bd"
-
-eslint-config-nimedev-node@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-nimedev-node/-/eslint-config-nimedev-node-3.0.0.tgz#81676de16863d3eec4ae336bd14b5b4c00db4e9c"
+eslint-config-nimedev-base@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-nimedev-base/-/eslint-config-nimedev-base-1.0.0.tgz#03156b8a29dd894288edab1988a62cc5cee9ac14"
 
 eslint-import-resolver-node@^0.2.0:
   version "0.2.3"

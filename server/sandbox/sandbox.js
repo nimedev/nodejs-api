@@ -4,10 +4,8 @@
  * @module sandbox
  */
 
-'use strict'
-
 /**
- * Class representing a sandbox object
+ * sandbox factory
  */
 module.exports = function sandboxFactory() {
   // Map used to register events

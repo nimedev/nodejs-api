@@ -2,8 +2,6 @@
  * @module database.config
  */
 
-'use strict'
-
 const mongoSuffix = process.env.NODE_ENV === 'test' ? '-test' : ''
 
 /**

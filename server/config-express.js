@@ -3,9 +3,6 @@
  * @module config-express
  */
 
-'use strict'
-
-// npm modules
 const bodyParser = require('body-parser')
 const compression = require('compression')
 const cors = require('cors')

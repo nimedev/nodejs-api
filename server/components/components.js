@@ -3,8 +3,6 @@
  * @module components
  */
 
-'use strict'
-
 /* eslint-disable global-require */
 
 /**

@@ -3,8 +3,6 @@
  * @module test-api
  */
 
-'use strict'
-
 const chai = require('chai')
 
 // Chai styles

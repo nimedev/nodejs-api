@@ -4,8 +4,6 @@
  * @module sandbox.spec
  */
 
-'use strict'
-
 // Set the env variable to test
 process.env.NODE_ENV = 'test'
 
@@ -30,7 +28,9 @@ describe('sandbox module', () => {
     expect(result).to.equal(false)
 
     // Try to save a object
-    result = sandbox.answer('any', { name: 'test' })
+    result = sandbox.answer('any', {
+      name: 'test'
+    })
     expect(result).to.equal(true)
 
     // Try to override a question

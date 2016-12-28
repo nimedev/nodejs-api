@@ -2,8 +2,6 @@
  * @module user.dao
  */
 
-'use strict'
-
 const appConfig = require('../../config')
 const dbService = require('../../database').service
 const User = require('./user.model').User

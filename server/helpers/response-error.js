@@ -2,11 +2,8 @@
  * @module response-error
  */
 
-'use strict'
-
 /**
  * Send error in json format using the status code
- *
  * @param {Object} res - response object.
  * @param {Object} err - error object or name of the error.
  */

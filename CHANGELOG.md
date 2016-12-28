@@ -1,5 +1,16 @@
 # Change Log
 
+## [4.0.0] - 2016-12-28
+
+### Modified
+- Implement eslint-config-nimedev-base.
+- Add .editorconfig file.
+
+### Deleted
+- Remove unnecesary vscode settings.
+- Remove unnecesary 'use strict'.
+
+
 ## [3.2.1] - 2016-12-27
 
 ### Updated
@@ -202,7 +213,7 @@
 
 ## [0.2.0] - 2016-08-07
 
-### Added 
+### Added
 - Add link to license in README.md.
 
 ### Modified

@@ -3,8 +3,6 @@
  * @module user.controller
  */
 
-'use strict'
-
 const express = require('express')
 const responseError = require('../../helpers/response-error')
 const dummy = require('../../middleware/dummy')
@@ -23,7 +21,9 @@ module.exports = () => {
     .post('/users', dummyMiddleware, (req, res) => {
       // Try to create a user
       userDAO.creatingUser(req.body)
-        .then(user => res.status(201).json({ user }))
+        .then(user => res.status(201).json({
+          user
+        }))
         .catch(err => responseError(res, err))
     })
     .get('/users', dummyMiddleware, (req, res) => {
@@ -35,7 +35,9 @@ module.exports = () => {
     .get('/users/:userID', dummyMiddleware, (req, res) => {
       const userID = req.params.userID
       userDAO
-        .findingUser({ _id: userID })
+        .findingUser({
+          _id: userID
+        })
         .then(user => res.json(user))
         .catch(err => responseError(res, err))
     })

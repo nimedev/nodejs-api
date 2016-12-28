@@ -4,8 +4,6 @@
  * @module database.spec
  */
 
-'use strict'
-
 // Set the env variable to test
 process.env.NODE_ENV = 'test'
 
