@@ -1,5 +1,12 @@
 # Change Log
 
+## [4.2.0] - 2017-01-05
+
+### Updated
+- Upgrade mongoose and eslint-config-nimedev-base.
+- Upgrade NodeJS to v6.9.4.
+
+
 ## [4.1.0] - 2016-12-28
 
 ### Added
