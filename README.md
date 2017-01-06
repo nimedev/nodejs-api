@@ -16,7 +16,7 @@
 ```sh
 node --version
 ```
-The version should be at or above 6.8.0
+The version should be at or above 6.9.4
 
 If you don't have Node.js installed go to [nodejs](https://nodejs.org/en/download/) and install the appropiate version or use [nvm](http://www.sergiolepore.net/2014/06/30/nvm-instalando-y-usando-node-version-manager/) (Recommended).
 
