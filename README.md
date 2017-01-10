@@ -42,12 +42,23 @@ yarn
 
 ### Environment variables
 
-#### Host configuration
-- `NODE_ENV="development"`. Environment for server.
-- `NODEJS_API_PORT=8080`. Port for api.
+```sh
+##
+# nodejs-api environment variables
+##
 
-#### MongoDB configuration
-- `NODEJS_API_MONGODB_URI=undefined`. Uri for default database.
+# Host configuration
+## Environment for server.
+export NODE_ENV="development"
+## Port for api.
+export NODEJS_API_PORT=8080
+
+# MongoDB configuration
+## Uri for default database.
+export NODEJS_API_MONGODB_URI="mongodb://localhost:27017/nodejs-api"
+```
+
+You can copy this script in bashrc file, modify the variables and delete variables that don't need modification or are undefined.
 
 To change any of this variables:
 
