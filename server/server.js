@@ -21,7 +21,7 @@ const express = require('express')
 const components = require('./components')
 const appConfig = require('./config')
 const database = require('./database')
-const expressMiddleware = require('./express-middleware')
+const expressSetup = require('./express-setup')
 const routes = require('./routes')
 const sandboxFactory = require('./sandbox')
 
@@ -40,7 +40,7 @@ const sandbox = sandboxFactory()
 database.pool.connect()
 
 // Setup express middleware
-expressMiddleware(app)
+expressSetup(app)
 
 // LOAD COMPONENTS ====================
 // ====================================

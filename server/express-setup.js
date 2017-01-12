@@ -1,6 +1,6 @@
 /**
  * Set global middleware for all app
- * @module express-middleware
+ * @module express-setup
  */
 
 const bodyParser = require('body-parser')
