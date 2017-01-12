@@ -3,7 +3,7 @@
  * @module config
  */
 
-module.exports = Object.freeze({
+const config = {
   // Environment
   env: process.env.NODE_ENV,
 
@@ -13,4 +13,12 @@ module.exports = Object.freeze({
 
   // Server IP
   ip: process.env.OPENSHIFT_NODEJS_IP || process.env.IP || undefined
-})
+}
+
+// Test and log app settings
+if (process.env.NODE_ENV !== 'test') {
+  // eslint-disable-next-line no-console
+  console.log('\nconfig:', JSON.stringify(config, null, ' '))
+}
+
+module.exports = Object.freeze(config)
