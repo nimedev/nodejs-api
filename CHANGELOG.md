@@ -1,5 +1,16 @@
 # Change Log
 
+## [4.4.0] - 2017-01-12
+
+### Added
+- Add link to javascript style guide in README.md file.
+
+### Modified
+- Rebase database module.
+- Rename config-express modules to express-setup.
+- Reorganize config module.
+
+
 ## [4.3.0] - 2017-01-10
 
 ### Modified

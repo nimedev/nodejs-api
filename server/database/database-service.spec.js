@@ -1,14 +1,14 @@
 /* global describe, it */
 /**
  * Test for database module
- * @module database.spec
+ * @module database-service.spec
  */
 
 // Set the env variable to test
 process.env.NODE_ENV = 'test'
 
 const chai = require('chai')
-const dbService = require('./database.service')
+const dbService = require('./database-service')
 
 // Chai styles
 const expect = chai.expect

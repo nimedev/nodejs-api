@@ -37,7 +37,7 @@ const sandbox = sandboxFactory()
 // APP CONFIGURATION ==================
 // ====================================
 // Connect to database
-database.pool.connect()
+database.connect()
 
 // Setup express middleware
 expressSetup(app)

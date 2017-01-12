@@ -1,6 +1,7 @@
 /**
- * Pool of connections to application databases
- * @module database.pool
+ * Modole with the pool of connections to application databases and the required functions to
+ * create the pool.
+ * @module database-pool
  */
 
 const mongoose = require('mongoose')
@@ -9,23 +10,19 @@ const dbConfig = require('./database.config')
 /**
  * Object with connections to databases
  */
-const connections = {}
+const connections = new Map()
 
 /**
  * Create connections of available databases
  */
 const connect = () => {
-  const mongoConnections = dbConfig.connections
-    // Set mongoose promises
+  // Set mongoose promises
   mongoose.Promise = global.Promise
 
   // Make connections that are in application config
-  Object.keys(mongoConnections).map((connectionName) => {
-    const uri = mongoConnections[connectionName].uri
-    const options = mongoConnections[connectionName].options
-
+  dbConfig.connections.forEach((config, name) => {
     // Create the connection
-    const db = mongoose.createConnection(uri, options)
+    const db = mongoose.createConnection(config.uri, config.options)
 
     // Asign a error handler for this connection
     db.on('error', (err) => {
@@ -34,8 +31,7 @@ const connect = () => {
     })
 
     // Save the connection in a pool
-    connections[connectionName] = db
-    return db
+    connections.set(name, db)
   })
 }
 

@@ -1,6 +1,6 @@
 /**
  * Common actions for crud operations
- * @module database
+ * @module database-service
  */
 
 const mongoose = require('mongoose')
@@ -61,7 +61,7 @@ const findingOne = (model, query, projection = {}, populate = []) => {
   const popArray = Array.isArray(populate) ? populate : [populate]
 
   // Check if populate
-  popArray.map(obj => cursor.populate(obj.property, obj.projection))
+  popArray.map(populateObj => cursor.populate(populateObj))
 
   // Return the query
   return cursor.exec()

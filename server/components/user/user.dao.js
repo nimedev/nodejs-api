@@ -3,11 +3,9 @@
  */
 
 const appConfig = require('../../config')
-const dbService = require('../../database').service
+const database = require('../../database')
 const User = require('./user.model').User
 const userError = require('./user-error.map')
-
-const validationError = dbService.validationError
 
 /**
  * Create a user document
@@ -33,7 +31,7 @@ const creatingUser = user => (
 
         // Override error if is a duplicated key error
         if (err.code === 11000) {
-          newErr = validationError('email', 'User already exits', 'duplicated', user.email)
+          newErr = database.validationError('email', 'User already exits', 'duplicated', user.email)
         }
         reject(newErr)
       })
@@ -58,7 +56,7 @@ const creatingUser = user => (
 const findingUser = (query, projection, populate) => (
   new Promise((resolve, reject) => {
     // Execute the query.
-    dbService
+    database
       .findingOne(User, query, projection, populate)
       .then((user) => {
         // Reject the promise if no find user and not error happends
@@ -77,7 +75,7 @@ const findingUser = (query, projection, populate) => (
  *  function of database module (Don't pass de model).
  * @returns {Promise} Mongoose exec() promise
  */
-const listingUsers = (...params) => dbService.finding(User, ...params)
+const listingUsers = (...params) => database.finding(User, ...params)
 
 /**
  * Remove all documents (only in test environment)
