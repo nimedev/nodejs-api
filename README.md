@@ -122,6 +122,14 @@ To run eslint in console type:
 yarn run lint
 ```
 
+
+## Style Guides
+
+### JavaScript
+
+**[Nimedev JavaScript style guide](https://github.com/nimedev/javascript)**.
+
+
 ## Editors
 This project is configured to use with `VScode`. Also contain pre-configured task for development. See `.vscode` folder to explore the options.
 
