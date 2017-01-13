@@ -25,6 +25,7 @@ const finding = (model, query, projection = {}, populate = [], sort = {},
   paging = {}) => {
   const cursor = model.find(query, projection)
   const popArray = Array.isArray(populate) ? populate : [populate]
+  let { page, size } = paging
 
   // Check if populate
   popArray.forEach(populateObj => cursor.populate(populateObj))
@@ -32,9 +33,11 @@ const finding = (model, query, projection = {}, populate = [], sort = {},
   // Add sort method
   cursor.sort(sort)
 
-  // Paging configuration
-  paging.page && paging.size && cursor.skip((paging.page - 1) * paging.size)
-  paging.size && cursor.limit(parseInt(paging.size, 10))
+  // Paging configuration. Only positive numbers
+  if (page) page = parseInt(page, 10)
+  if (size) size = parseInt(size, 10)
+  page && size && cursor.skip((page - 1) * size)
+  size && cursor.limit(size)
 
   // Return the query
   return cursor.exec()
