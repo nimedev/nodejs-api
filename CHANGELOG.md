@@ -1,5 +1,14 @@
 # Change Log
 
+## [4.5.0] - 2017-01-12
+
+### Modified
+- Update database-service module.
+
+### Updated
+- Upgrade eslint-config-nimedev-base.
+
+
 ## [4.4.0] - 2017-01-12
 
 ### Added
@@ -253,7 +262,7 @@
 - Rename users module to user.
 - Implement sandbox for each component.
 
-### Upgraded
+### Updated
 - Upgrade mongoose and eslint.
 
 
