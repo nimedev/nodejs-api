@@ -12,7 +12,8 @@ global.baseDir = __dirname
 const appSetting = require('../package')
 
 // eslint-disable-next-line no-console
-console.log(`====================================
+console.log(`
+====================================
 NODEJS-API ${appSetting.version}`)
 
 // BASE SETUP

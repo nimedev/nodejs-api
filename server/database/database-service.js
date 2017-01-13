@@ -27,7 +27,7 @@ const finding = (model, query, projection = {}, populate = [], sort = {},
   const popArray = Array.isArray(populate) ? populate : [populate]
 
   // Check if populate
-  popArray.map(obj => cursor.populate(obj.property, obj.projection))
+  popArray.forEach(populateObj => cursor.populate(populateObj))
 
   // Add sort method
   cursor.sort(sort)
@@ -61,7 +61,7 @@ const findingOne = (model, query, projection = {}, populate = []) => {
   const popArray = Array.isArray(populate) ? populate : [populate]
 
   // Check if populate
-  popArray.map(populateObj => cursor.populate(populateObj))
+  popArray.forEach(populateObj => cursor.populate(populateObj))
 
   // Return the query
   return cursor.exec()
