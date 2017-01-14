@@ -31,12 +31,6 @@ The version should be at or above 0.18.0
 
 If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/install) and install the appropiate version.
 
-#### 4) Install the workspace dependencies.
-```sh
-# cd to your project folder
-yarn
-```
-
 
 ## Workflow
 
@@ -66,7 +60,13 @@ To change any of this variables:
 export NODEJS_API_PORT=8000
 ```
 
-### Development workflow
+### Development
+
+#### Install the workspace dependencies.
+```sh
+# cd to your project folder
+yarn
+```
 
 #### Start the server with yarn
 ```sh
@@ -86,7 +86,10 @@ nodemon
 Press F5 or run debug command.
 
 ### Production workflow
-You can use `PM2` or other tools.
+- Set the environment variables with production values. `export NODE_ENV='production'`, ...
+- Use a process manager like `PM2`.
+
+> If need install development dependencies run `yarn install:dev`
 
 ### Install/Uninstall/Update dependencies
 Follow this rules to update dependencies:
