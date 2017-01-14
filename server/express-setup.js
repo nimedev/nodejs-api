@@ -6,15 +6,18 @@
 const bodyParser = require('body-parser')
 const compression = require('compression')
 const cors = require('cors')
-const errorHandler = require('errorhandler')
-const morgan = require('morgan')
+
+const isInDevelopment = (process.env.NODE_ENV === 'development')
+
+/* eslint-disable import/no-extraneous-dependencies */
+const errorHandler = isInDevelopment ? require('errorhandler') : null
+const morgan = isInDevelopment ? require('morgan') : null
+/* eslint-enable import/no-extraneous-dependencies */
 
 /**
  * Set express middleware
  */
 module.exports = (app) => {
-  const env = app.get('env')
-
   // Use body parser so we can grab information from POST requests
   app.use(bodyParser.urlencoded({
     extended: true
@@ -28,7 +31,7 @@ module.exports = (app) => {
   app.use(compression())
 
   // Settings for development environment
-  if (env === 'development') {
+  if (isInDevelopment) {
     // Log all requests to the console
     app.use(morgan('combined'))
 

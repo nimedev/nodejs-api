@@ -1,5 +1,15 @@
 # Change Log
 
+## [4.6.0] - 2017-01-13
+
+### Fixed
+- Fix bug in with paging in database-service.
+
+### Modified
+- Improve error handling.
+- Move morgan and errorhandler to devDependencies.
+
+
 ## [4.5.0] - 2017-01-12
 
 ### Modified

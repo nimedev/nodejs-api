@@ -4,8 +4,9 @@
 
 const appConfig = require('../../config')
 const database = require('../../database')
+const errorHandler = require('../../error-handler')
 const User = require('./user.model').User
-const userError = require('./user-error.map')
+const userError = require('./user-error')
 
 /**
  * Create a user document
@@ -31,7 +32,7 @@ const creatingUser = user => (
 
         // Override error if is a duplicated key error
         if (err.code === 11000) {
-          newErr = database.validationError('email', 'User already exits', 'duplicated', user.email)
+          newErr = errorHandler.validationError('email', 'User already exits', 'duplicated', user.email)
         }
         reject(newErr)
       })
@@ -60,7 +61,7 @@ const findingUser = (query, projection, populate) => (
       .findingOne(User, query, projection, populate)
       .then((user) => {
         // Reject the promise if no find user and not error happends
-        if (!user) return reject(userError.get('UserNotFound'))
+        if (!user) return reject(userError('UserNotFound'))
 
         // Otherwise resolve with user
         return resolve(user)

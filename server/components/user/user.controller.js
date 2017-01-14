@@ -4,7 +4,6 @@
  */
 
 const express = require('express')
-const responseError = require('../../helpers/response-error')
 const dummy = require('../../middleware/dummy')
 const userDAO = require('./user.dao')
 
@@ -18,28 +17,28 @@ module.exports = () => {
 
   // Create component routes
   router
-    .post('/users', dummyMiddleware, (req, res) => {
+    .post('/users', dummyMiddleware, (req, res, next) => {
       // Try to create a user
       userDAO.creatingUser(req.body)
         .then(user => res.status(201).json({
           user
         }))
-        .catch(err => responseError(res, err))
+        .catch(next)
     })
-    .get('/users', dummyMiddleware, (req, res) => {
+    .get('/users', dummyMiddleware, (req, res, next) => {
       userDAO
         .listingUsers()
         .then(users => res.json(users))
-        .catch(err => responseError(res, err))
+        .catch(next)
     })
-    .get('/users/:userID', dummyMiddleware, (req, res) => {
+    .get('/users/:userID', dummyMiddleware, (req, res, next) => {
       const userID = req.params.userID
       userDAO
         .findingUser({
           _id: userID
         })
         .then(user => res.json(user))
-        .catch(err => responseError(res, err))
+        .catch(next)
     })
 
   // Module router

@@ -22,6 +22,7 @@ const express = require('express')
 const components = require('./components')
 const appConfig = require('./config')
 const database = require('./database')
+const errorHandler = require('./error-handler')
 const expressSetup = require('./express-setup')
 const routes = require('./routes')
 const sandboxFactory = require('./sandbox')
@@ -53,6 +54,10 @@ app.use('/api', apiRouter)
 // ROUTES =============================
 // ====================================
 routes(app, sandbox)
+
+// ERROR HANDLER ======================
+// ====================================
+errorHandler.middleware(app)
 
 // START THE SERVER
 // ====================================
