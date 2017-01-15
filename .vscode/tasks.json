@@ -13,13 +13,6 @@
         "run",
         "test"
       ]
-    },
-    {
-      "taskName": "test:api",
-      "args": [
-        "run",
-        "test:api"
-      ]
     }
   ]
 }
