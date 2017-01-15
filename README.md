@@ -60,7 +60,7 @@ To change any of this variables:
 export NODEJS_API_PORT=8000
 ```
 
-### Development
+### Development workflow
 
 #### Install the workspace dependencies.
 ```sh
@@ -87,9 +87,17 @@ Press F5 or run debug command.
 
 ### Production workflow
 - Set the environment variables with production values. `export NODE_ENV='production'`, ...
+- Install workspace dependencies.
+```sh
+# cd to your project folder
+yarn
+
+# Or if need install development dependencies run
+yarn install:dev
+```
 - Use a process manager like `PM2`.
 
-> If need install development dependencies run `yarn install:dev`
+> If update the repository repeat the process since `Install workspace dependencies` step.
 
 ### Install/Uninstall/Update dependencies
 Follow this rules to update dependencies:
@@ -122,7 +130,7 @@ To run eslint in console type:
 
 ```sh
 # cd to your project folder
-yarn run lint
+yarn lint
 ```
 
 

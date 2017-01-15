@@ -1,5 +1,14 @@
 # Change Log
 
+## [4.7.1] - 2017-01-15
+
+### Fixed
+- Improve documentation in workflow section.
+
+### Modified
+- Update vscode settings.
+
+
 ## [4.7.0] - 2017-01-14
 
 ### Modified
