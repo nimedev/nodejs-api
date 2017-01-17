@@ -1,5 +1,15 @@
 # Change Log
 
+## [4.8.0] - 2017-01-16
+
+### Added
+- Implement errorLogger function.
+
+### Updated
+- Upgrade devDep: eslint-config-nimedev-base.
+- Upgrade dep: mongoose.
+
+
 ## [4.7.1] - 2017-01-15
 
 ### Fixed

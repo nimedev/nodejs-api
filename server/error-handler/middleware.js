@@ -4,12 +4,14 @@
  * @member error-handler
  */
 
+const tools = require('./error-handler.tools')
+
 /**
  * Log errors if not are custom errors (have status or are ValidationError)
  */
 const logErrors = (err, req, res, next) => {
   if (!err.status && err.name !== 'ValidationError') {
-    console.error(err.stack)
+    tools.errorLogger(err)
   }
   next(err)
 }

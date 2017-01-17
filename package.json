@@ -1,6 +1,6 @@
 {
   "name": "nodejs-api",
-  "version": "4.7.1",
+  "version": "4.8.0",
   "description": "A starting point to implement APIs with node js",
   "main": "server",
   "scripts": {

@@ -5,6 +5,7 @@
  */
 
 const mongoose = require('mongoose')
+const errorHandler = require('../error-handler')
 const dbConfig = require('./database.config')
 
 /**
@@ -26,7 +27,7 @@ const connect = () => {
 
     // Asign a error handler for this connection
     db.on('error', (err) => {
-      console.error(`MongoDB connection error: ${err}`)
+      errorHandler.errorLogger(err)
       process.exit(-1)
     })
 
