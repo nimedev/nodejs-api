@@ -1,6 +1,6 @@
 /**
  * Mongoose schema for users
- * @module user.schema
+ * @module user-schema
  */
 
 const mongoose = require('mongoose')

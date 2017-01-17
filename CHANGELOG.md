@@ -1,5 +1,11 @@
 # Change Log
 
+## [4.8.1] - 2017-01-17
+
+### Modified
+- Rename user.schema file to user-schema.
+
+
 ## [4.8.0] - 2017-01-16
 
 ### Added

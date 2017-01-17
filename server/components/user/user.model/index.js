@@ -2,8 +2,7 @@
  * @module user.model
  */
 
-// Submodules
-const User = require('./user.schema')
+const User = require('./user-schema')
 
 /**
  * Schemas for user component
