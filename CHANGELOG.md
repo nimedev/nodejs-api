@@ -1,5 +1,15 @@
 # Change Log
 
+## [4.9.0] - 2017-01-19
+
+### Modified
+- Implement tests for user.dao module.
+
+### Updated
+- Upgrade dep: body-parser.
+- Upgrade to yarn 0.19.1.
+
+
 ## [4.8.1] - 2017-01-17
 
 ### Modified

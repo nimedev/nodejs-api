@@ -2,11 +2,11 @@
  * @module user.dao
  */
 
-const appConfig = require('../../config')
-const database = require('../../database')
-const errorHandler = require('../../error-handler')
-const User = require('./user.model').User
-const userError = require('./user-error')
+const appConfig = require('../../../config')
+const database = require('../../../database')
+const errorHandler = require('../../../error-handler')
+const User = require('../user.model').User
+const userError = require('../user-error')
 
 /**
  * Create a user document
@@ -16,28 +16,24 @@ const userError = require('./user-error')
       role: 'user',
     }
  * @returns {Promise} Resolve with the new document if can create user.
- * Reject the promise if error happends.
  */
-const creatingUser = user => (
-  new Promise((resolve, reject) => {
-    // Create a new user
-    delete user._id
-    const newUser = new User(user)
+const creatingUser = (user) => {
+  // Create a new user
+  delete user._id
+  const newUser = new User(user)
 
-    // Save new user and send token
-    newUser.save()
-      .then(resolve)
-      .catch((err) => {
-        let newErr = err
+  // Save new user and send token
+  return newUser.save()
+    .catch((err) => {
+      let newErr = err
 
-        // Override error if is a duplicated key error
-        if (err.code === 11000) {
-          newErr = errorHandler.validationError('email', 'User already exits', 'duplicated', user.email)
-        }
-        reject(newErr)
-      })
-  })
-)
+      // Override error if is a duplicated key error
+      if (err.code === 11000) {
+        newErr = errorHandler.validationError('email', 'User already exits', 'duplicated', user.email)
+      }
+      return Promise.reject(newErr)
+    })
+}
 
 /**
  * Get user document by id.
@@ -52,21 +48,16 @@ const creatingUser = user => (
       options: { limit: 5 }
     }
  * @returns {Promise} Resolve if find the user. Return the finded user object.
- * Reject the promise if don't find a user or a error happends.
  */
 const findingUser = (query, projection, populate) => (
-  new Promise((resolve, reject) => {
-    // Execute the query.
-    database
-      .findingOne(User, query, projection, populate)
-      .then((user) => {
-        // Reject the promise if no find user and not error happends
-        if (!user) return reject(userError('UserNotFound'))
+  database
+  .findingOne(User, query, projection, populate)
+  .then((user) => {
+    // Reject the promise if no find user and not error happends
+    if (!user) return Promise.reject(userError('UserNotFound'))
 
-        // Otherwise resolve with user
-        return resolve(user)
-      })
-      .catch(reject)
+    // Otherwise resolve with user
+    return user
   })
 )
 
