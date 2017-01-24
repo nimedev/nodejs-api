@@ -1,5 +1,14 @@
 # Change Log
 
+## [4.10.0] - 2017-01-24
+
+### Added
+- Add .jsbeautifyrc file to control vscode autoformating.
+
+### Updated
+- Upgrade mongoose and eslint.
+
+
 ## [4.9.0] - 2017-01-19
 
 ### Modified

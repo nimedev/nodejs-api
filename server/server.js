@@ -9,16 +9,13 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 // Set root application path in global object
 global.baseDir = __dirname
 
-const appSetting = require('../package')
-
 // eslint-disable-next-line no-console
-console.log(`
-====================================
-NODEJS-API ${appSetting.version}`)
+console.log('====================================')
 
 // BASE SETUP
 // ======================================
 const express = require('express')
+const appSetting = require('../package')
 const components = require('./components')
 const appConfig = require('./config')
 const database = require('./database')
@@ -63,7 +60,9 @@ errorHandler.middleware(app)
 // ====================================
 app.listen(appConfig.port, appConfig.ip, () => {
   // eslint-disable-next-line no-console
-  console.log(`\nAPI running with NodeJS ${process.version}`)
+  console.log(`
+NODEJS-API ${appSetting.version}
+Running with NodeJS ${process.version}`)
 })
 
 // Export for testing
