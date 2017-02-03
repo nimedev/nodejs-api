@@ -1,5 +1,16 @@
 # Change Log
 
+## [4.11.0] - 2017-02-03
+
+### Deleted
+- Remove .jsbeautifyrc file.
+
+### Updated
+- Upgrade devDep: eslint.
+- Update dep: express and mongoose.
+- Updated to nodejs 6.9.5.
+
+
 ## [4.10.0] - 2017-01-24
 
 ### Added
