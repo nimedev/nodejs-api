@@ -13,6 +13,7 @@
 ## Install dependencies
 
 #### 1) Check `Node.js` version.
+
 ```sh
 node --version
 ```
@@ -24,6 +25,7 @@ If you don't have Node.js installed go to [nodejs](https://nodejs.org/en/downloa
 The version should be at or above 3.
 
 #### 3) Check `yarn` version.
+
 ```sh
 yarn --version
 ```
@@ -63,22 +65,25 @@ export NODEJS_API_PORT=8000
 ### Development workflow
 
 #### Install the workspace dependencies.
+
 ```sh
-# cd to your project folder
+# cd to project folder
 yarn
 ```
 
 #### Start the server with yarn
+
 ```sh
-# cd to your project folder
+# cd to project folder
 yarn start
 ```
 
 #### Server with nodemon tool
+
 ```sh
 # install nodemon globally
 yarn global add nodemon
-# cd to your project folder
+# cd to project folder
 nodemon
 ```
 
@@ -88,8 +93,9 @@ Press F5 or run debug command.
 ### Production workflow
 - Set the environment variables with production values. `export NODE_ENV='production'`, ...
 - Install workspace dependencies.
+
 ```sh
-# cd to your project folder
+# cd to project folder
 yarn
 
 # Or if need install development dependencies run
@@ -106,19 +112,18 @@ Follow this rules to update dependencies:
 
 ```sh
 # To install production dependencies
-# cd to your project folder
+# cd to project folder
 yarn add express --exact
-```
-```sh
+
 # To install development dependencies
-# cd to your project folder
+# cd to project folder
 yarn add eslint --exact --dev
 ```
 
 - Uninstall dependencies
 
 ```sh
-# cd to your project folder
+# cd to project folder
 yarn remove express
 ```
 
@@ -129,7 +134,7 @@ yarn remove express
 To run eslint in console type:
 
 ```sh
-# cd to your project folder
+# cd to project folder
 yarn lint
 ```
 
