@@ -28,7 +28,7 @@
   "homepage": "https://github.com/nimedev/nodejs-api#readme",
   "engines": {
     "npm": ">=3.10.10",
-    "node": ">=6.9.4 <7.0.0"
+    "node": ">=6.9.5 <7.0.0"
   },
   "dependencies": {
     "body-parser": "1.16.0",
