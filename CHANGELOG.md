@@ -1,5 +1,11 @@
 # Change Log
 
+## [4.12.0] - 2017-02-10
+
+### Updated
+- Upgrade devDep: eslint and morgan.
+
+
 ## [4.11.0] - 2017-02-03
 
 ### Deleted
