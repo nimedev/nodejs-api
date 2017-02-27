@@ -1,5 +1,12 @@
 # Change Log
 
+## [4.13.0] - 2017-02-27
+
+### Updated
+- Upgrade dep: body-parser and mongoose.
+- Upgrade devDep: eslint and morgan.
+
+
 ## [4.12.0] - 2017-02-10
 
 ### Updated
