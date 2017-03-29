@@ -1,5 +1,12 @@
 # Change Log
 
+## [4.13.1] - 2017-03-29
+
+### Updated
+- Upgrade dep: body-parser cors express mongoose.
+- Upgrade devDep: eslint.
+
+
 ## [4.13.0] - 2017-02-27
 
 ### Updated
