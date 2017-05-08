@@ -3,6 +3,8 @@
  * @module routes
  */
 
+'use strict'
+
 /** Set server routes */
 // ==================
 module.exports = (app) => {

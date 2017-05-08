@@ -4,6 +4,8 @@
  * @member test/helpers
  */
 
+'use strict'
+
 const chai = require('chai')
 
 // Chai styles

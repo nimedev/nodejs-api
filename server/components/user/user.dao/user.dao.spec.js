@@ -4,6 +4,8 @@
  * @module user.dao.spec
  */
 
+'use strict'
+
 // Set env variables to test and run the server
 process.env.NODE_ENV = 'test'
 require('../../../server')

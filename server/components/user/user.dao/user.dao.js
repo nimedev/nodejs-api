@@ -2,6 +2,8 @@
  * @module user.dao
  */
 
+'use strict'
+
 const appConfig = require('../../../config')
 const database = require('../../../database')
 const errorHandler = require('../../../error-handler')

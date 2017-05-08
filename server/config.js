@@ -3,6 +3,8 @@
  * @module config
  */
 
+'use strict'
+
 const config = {
   // Environment
   env: process.env.NODE_ENV,

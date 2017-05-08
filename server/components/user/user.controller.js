@@ -3,6 +3,8 @@
  * @module user.controller
  */
 
+'use strict'
+
 const express = require('express')
 const dummy = require('../../middleware/dummy')
 const userDAO = require('./user.dao')

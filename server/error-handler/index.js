@@ -2,6 +2,8 @@
  * @module error-handler
  */
 
+'use strict'
+
 const customError = require('./custom-error')
 const tools = require('./error-handler.tools')
 const middleware = require('./middleware')

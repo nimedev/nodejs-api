@@ -2,6 +2,8 @@
  * @module database
  */
 
+'use strict'
+
 const pool = require('./database-pool')
 const service = require('./database-service')
 

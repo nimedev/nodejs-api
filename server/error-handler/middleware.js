@@ -4,6 +4,8 @@
  * @member error-handler
  */
 
+'use strict'
+
 const tools = require('./error-handler.tools')
 
 /**

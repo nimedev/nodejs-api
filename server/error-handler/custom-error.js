@@ -3,6 +3,8 @@
  * @module custom-error
  */
 
+'use strict'
+
 const mongoose = require('mongoose')
 
 /**

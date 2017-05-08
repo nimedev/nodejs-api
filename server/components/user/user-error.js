@@ -3,6 +3,8 @@
  * @module user-error
  */
 
+'use strict'
+
 const CustomError = require('../../error-handler').CustomError
 
 // Templates to create the errors

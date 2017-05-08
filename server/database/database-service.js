@@ -3,6 +3,8 @@
  * @module database-service
  */
 
+'use strict'
+
 /**
  * Create a query for find function of mongoose.
  * @param {Object} model - mongoose model.

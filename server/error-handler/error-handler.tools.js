@@ -3,6 +3,8 @@
  * @module error-handler.tools
  */
 
+'use strict'
+
 /**
  * Log error.
  * @param {Object/Error} error - error to log

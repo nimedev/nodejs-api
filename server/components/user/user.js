@@ -3,6 +3,8 @@
  * @module user
  */
 
+'use strict'
+
 // Component modules
 const controller = require('./user.controller')
 const userDAO = require('./user.dao')

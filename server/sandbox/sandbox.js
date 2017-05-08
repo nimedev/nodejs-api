@@ -4,6 +4,8 @@
  * @module sandbox
  */
 
+'use strict'
+
 /**
  * sandbox factory
  */

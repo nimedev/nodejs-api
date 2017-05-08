@@ -2,6 +2,8 @@
  * @module dummy
  */
 
+'use strict'
+
 const appConfig = require('../config')
 
 /**

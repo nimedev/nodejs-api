@@ -3,6 +3,8 @@
  * @module user-schema
  */
 
+'use strict'
+
 const mongoose = require('mongoose')
 const database = require('../../../database')
 

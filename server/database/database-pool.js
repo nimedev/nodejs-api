@@ -4,6 +4,8 @@
  * @module database-pool
  */
 
+'use strict'
+
 const mongoose = require('mongoose')
 const errorHandler = require('../error-handler')
 const dbConfig = require('./database.config')

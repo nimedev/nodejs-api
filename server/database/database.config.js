@@ -2,6 +2,8 @@
  * @module database.config
  */
 
+'use strict'
+
 const mongoSuffix = process.env.NODE_ENV === 'test' ? '-test' : ''
 const config = {
   // Define a Map by connection

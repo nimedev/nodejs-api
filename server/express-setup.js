@@ -3,6 +3,8 @@
  * @module express-setup
  */
 
+'use strict'
+
 const bodyParser = require('body-parser')
 const compression = require('compression')
 const cors = require('cors')

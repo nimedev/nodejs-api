@@ -4,6 +4,8 @@
  * @module user-routes.spec
  */
 
+'use strict'
+
 // Set the env variable to test and load server
 process.env.NODE_ENV = 'test'
 const server = require('../../../server')
