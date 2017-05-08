@@ -18,10 +18,10 @@ console.log('====================================')
 // ======================================
 const express = require('express')
 const appSetting = require('../package')
-const components = require('./components')
 const appConfig = require('./config')
 const database = require('./database')
 const errorHandler = require('./error-handler')
+const services = require('./services')
 const expressSetup = require('./express-setup')
 const routes = require('./routes')
 const sandboxFactory = require('./sandbox')
@@ -43,9 +43,9 @@ database.connect()
 // Setup express middleware
 expressSetup(app)
 
-// LOAD COMPONENTS ====================
+// LOAD SERVICES ======================
 // ====================================
-components(apiRouter, sandbox)
+services(apiRouter, sandbox)
 
 // Set api routes
 app.use('/api', apiRouter)
