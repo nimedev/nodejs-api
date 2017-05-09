@@ -1,8 +1,4 @@
 /* global describe, before, it */
-/**
- * Tests for user.dao module
- * @module user.dao.spec
- */
 
 'use strict'
 
@@ -11,36 +7,36 @@ process.env.NODE_ENV = 'test'
 require('../../../server')
 
 const chai = require('chai')
-const testValidationError = require('../../../../test/helpers/test-validaton-error')
-const userDAO = require('./user.dao')
+const testTools = require('../../../../test/tools')
+const userTools = require('./user.tools')
 
 const expect = chai.expect
 
 // Parent block
-describe('user.dao module', () => {
+describe('user.tools module', () => {
   const newUser = {
     email: 'user@mail.com',
     role: 'user'
   }
   before((done) => {
-    userDAO.removingAllUsers().then(() => done())
+    userTools.removingAllUsers().then(() => done())
   })
 
   it('it should not create a user without required inputs', (done) => {
-    userDAO
+    userTools
       .creatingUser({})
       .catch((err) => {
         expect(err).to.be.instanceof(Error)
         expect(err).to.have.property('name').eql('ValidationError')
         expect(err).to.have.property('errors').to.be.an('object')
-        testValidationError.checkValidatorError(err.errors.email, 'required', 'email', undefined)
-        testValidationError.checkValidatorError(err.errors.role, 'required', 'role', undefined)
+        testTools.checkErrorsProperty(err.errors, 'email', 'required', undefined)
+        testTools.checkErrorsProperty(err.errors, 'role', 'required', undefined)
         done()
       })
   })
 
   it('it should create a user', (done) => {
-    userDAO
+    userTools
       .creatingUser(newUser)
       .then((user) => {
         expect(user).to.be.an('object')
@@ -49,19 +45,19 @@ describe('user.dao module', () => {
   })
 
   it('it should not create a user if alreade exits', (done) => {
-    userDAO
+    userTools
       .creatingUser(newUser)
       .catch((err) => {
         expect(err).to.be.instanceof(Error)
         expect(err).to.have.property('name').eql('ValidationError')
         expect(err).to.have.property('errors').to.be.an('object')
-        testValidationError.checkValidatorError(err.errors.email, 'duplicated', 'email', newUser.email)
+        testTools.checkErrorsProperty(err.errors, 'email', 'duplicated', newUser.email)
         done()
       })
   })
 
   it('it should not find a user if not exits', (done) => {
-    userDAO
+    userTools
       .findingUser({
         email: 'no@mail.com'
       })
@@ -74,7 +70,7 @@ describe('user.dao module', () => {
   })
 
   it('it should find a user', (done) => {
-    userDAO
+    userTools
       .findingUser({
         email: newUser.email
       })
@@ -85,7 +81,7 @@ describe('user.dao module', () => {
   })
 
   it('it should get a list of user', (done) => {
-    userDAO
+    userTools
       .listingUsers()
       .then((users) => {
         expect(users).to.be.an('array')

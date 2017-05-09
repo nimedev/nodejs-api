@@ -5,7 +5,7 @@
 'use strict'
 
 const controller = require('./user.controller')
-const userDAO = require('./user.dao')
+const userTools = require('./user.tools')
 
 /**
  * Load user component and try to register tools in a sandbox
@@ -14,7 +14,7 @@ const userDAO = require('./user.dao')
  */
 module.exports = (apiRouter, sandbox) => {
   // Register tools to share in sandbox
-  sandbox.answer('findingUserById', userDAO.findingUserById)
+  sandbox.answer('findingUserById', userTools.findingUserById)
 
   // Attach module router to a parent router
   apiRouter.use(controller())

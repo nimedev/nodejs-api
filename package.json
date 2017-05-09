@@ -1,13 +1,15 @@
 {
   "name": "nodejs-api",
-  "version": "4.13.1",
+  "version": "5.0.0",
   "description": "A starting point to implement APIs with node js",
   "main": "server",
   "scripts": {
     "install:dev": "export NODE_ENV='development' && yarn",
     "lint": "eslint . --ext js",
     "start": "node server",
-    "test": "mocha 'server/**/*.spec.js'"
+    "test": "npm run test:unit && npm run test:api",
+    "test:unit": "mocha 'server/**/*.spec.js'",
+    "test:api": "mocha 'test/api/**/*.spec.js'"
   },
   "pre-commit": [
     "lint",
@@ -25,7 +27,7 @@
   "homepage": "https://github.com/nimedev/nodejs-api#readme",
   "engines": {
     "npm": ">=3.10.10",
-    "node": ">=6.9.5 <7.0.0"
+    "node": ">=6.10.3 <7.0.0"
   },
   "dependencies": {
     "body-parser": "1.17.1",

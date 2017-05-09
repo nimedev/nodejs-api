@@ -1,5 +1,5 @@
 /**
- * @module user.dao
+ * @module user.tools
  */
 
 'use strict'

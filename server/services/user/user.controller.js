@@ -7,7 +7,7 @@
 
 const express = require('express')
 const dummy = require('../../middleware/dummy')
-const userDAO = require('./user.dao')
+const userTools = require('./user.tools')
 
 const router = express.Router()
 
@@ -21,21 +21,22 @@ module.exports = () => {
   router
     .post('/users', dummyMiddleware, (req, res, next) => {
       // Try to create a user
-      userDAO.creatingUser(req.body)
+      userTools
+        .creatingUser(req.body)
         .then(user => res.status(201).json({
           user
         }))
         .catch(next)
     })
     .get('/users', dummyMiddleware, (req, res, next) => {
-      userDAO
+      userTools
         .listingUsers()
         .then(users => res.json(users))
         .catch(next)
     })
     .get('/users/:userID', dummyMiddleware, (req, res, next) => {
       const userID = req.params.userID
-      userDAO
+      userTools
         .findingUser({
           _id: userID
         })

@@ -1,5 +1,18 @@
 # Change Log
 
+## [5.0.0] - 2017-05-08
+
+### Modified
+- Update database module.
+- Update error-handler module.
+- Breaking Change: Rename components folder to services.
+- Move controller test to main test folder.
+
+### Updated
+- Upgrade dep: cors mongoose.
+- Upgrade devDep: eslint eslint-config-nimedev-base mocha.
+
+
 ## [4.13.1] - 2017-03-29
 
 ### Updated

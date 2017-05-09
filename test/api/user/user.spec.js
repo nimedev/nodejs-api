@@ -1,8 +1,4 @@
 /* global describe, before, it */
-/**
- * Test for user component
- * @module user-routes.spec
- */
 
 'use strict'
 
@@ -12,8 +8,8 @@ const server = require('../../../server')
 
 const chai = require('chai')
 const chaiHttp = require('chai-http')
-const checkRequestError = require('../../../../test/helpers/test-api').checkRequestError
-const userDAO = require('../user.dao')
+const userTools = require('../../../server/services/user/user.tools')
+const testTools = require('../../tools')
 
 const app = server.app
 
@@ -25,9 +21,7 @@ const expect = chai.expect
 describe('User routes', () => {
   // Remove all related with users
   before((done) => {
-    userDAO
-      .removingAllUsers()
-      .then(() => done())
+    userTools.removingAllUsers().then(() => done())
   })
 
   /*
@@ -39,9 +33,16 @@ describe('User routes', () => {
     // Error responses
     it('it should not POST a user without any data', (done) => {
       const user = {}
-      const expectedFields = ['email', 'role']
-      const request = chai.request(app).post(url).send(user)
-      checkRequestError(request, 422, 'ValidationError', expectedFields, done)
+      chai
+        .request(app)
+        .post(url)
+        .send(user)
+        .end((err, res) => {
+          testTools.checkResponseError(res, 422, 'ValidationError')
+          testTools.checkErrorsProperty(res.body.errors, 'email', 'required')
+          testTools.checkErrorsProperty(res.body.errors, 'role', 'required')
+          done()
+        })
     })
 
     // Create a user
@@ -67,9 +68,15 @@ describe('User routes', () => {
         email: 'user@mail.test',
         role: 'user'
       }
-      const expectedFields = ['email']
-      const request = chai.request(app).post(url).send(user)
-      checkRequestError(request, 422, 'ValidationError', expectedFields, done)
+      chai
+        .request(app)
+        .post(url)
+        .send(user)
+        .end((err, res) => {
+          testTools.checkResponseError(res, 422, 'ValidationError')
+          testTools.checkErrorsProperty(res.body.errors, 'email', 'duplicated')
+          done()
+        })
     })
     it('it should POST a second admin', (done) => {
       const user = {
@@ -115,15 +122,20 @@ describe('User routes', () => {
   describe('GET /api/users/:userID', () => {
     const url = '/api/users'
     it('it should not GET a user if not find id', (done) => {
-      const request = chai.request(app).get(`${url}/000000000000000000000000`)
-      checkRequestError(request, 404, 'UserNotFound', null, done)
+      chai
+        .request(app)
+        .get(`${url}/000000000000000000000000`)
+        .end((err, res) => {
+          testTools.checkResponseError(res, 404, 'UserNotFound')
+          done()
+        })
     })
     it('it should GET a user by the given id', (done) => {
       const user = {
         email: 'user_to_getbyid@mail.test',
         role: 'user'
       }
-      userDAO
+      userTools
         .creatingUser(user)
         .then((newUser) => {
           chai.request(app)
