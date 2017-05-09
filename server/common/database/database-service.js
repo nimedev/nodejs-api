@@ -17,15 +17,14 @@
       projection: { removed: 1 }
     }
  * @param {Any} sort - used in shor() function
- * @param {number} paging - paging configuration (see defaultPaging object in
- *  database.config to check object structure).
+ * @param {number} paging - paging configuration { page, limit }.
  * @returns {Promise} mongoose promise
  */
 const finding = (model, query, projection = {}, populate = [], sort = {},
   paging = {}) => {
   const cursor = model.find(query, projection)
   const popArray = Array.isArray(populate) ? populate : [populate]
-  let { page, size } = paging
+  let { page, limit } = paging
 
   // Check if populate
   popArray.forEach(populateObj => cursor.populate(populateObj))
@@ -35,9 +34,9 @@ const finding = (model, query, projection = {}, populate = [], sort = {},
 
   // Paging configuration. Only positive numbers
   if (page) page = parseInt(page, 10)
-  if (size) size = parseInt(size, 10)
-  page && size && cursor.skip((page - 1) * size)
-  size && cursor.limit(size)
+  if (limit) limit = parseInt(limit, 10)
+  page && limit && cursor.skip((page - 1) * limit)
+  limit && cursor.limit(limit)
 
   // Return the query
   return cursor.exec()

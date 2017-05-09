@@ -4,9 +4,9 @@
 
 'use strict'
 
-const appConfig = require('../../../config')
-const database = require('../../../database')
+const database = require('../../../common/database')
 const errorHandler = require('../../../error-handler')
+const appConfig = require('../../../config')
 const User = require('../user.model').User
 const userError = require('../user-error')
 

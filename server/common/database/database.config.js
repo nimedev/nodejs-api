@@ -30,4 +30,7 @@ if (process.env.NODE_ENV !== 'test') {
   console.log('\ndatabase.config:', JSON.stringify(config, null, ' '))
 }
 
+/**
+ * Setting for mongoDB
+ */
 module.exports = Object.freeze(config)
