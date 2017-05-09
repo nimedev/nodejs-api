@@ -22,9 +22,10 @@ class CustomError extends Error {
     field
   } = {}) {
     // Get the properties of the error according with the name
-    super(message)
+    super()
 
     // Set the new properties
+    this.message = message
     this.name = name
     this.status = status
     this.field = field

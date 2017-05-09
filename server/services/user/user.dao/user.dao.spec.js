@@ -44,11 +44,6 @@ describe('user.dao module', () => {
       .creatingUser(newUser)
       .then((user) => {
         expect(user).to.be.an('object')
-        for (const key in newUser) {
-          if ({}.hasOwnProperty.call(key, newUser)) {
-            newUser[key] = user[key]
-          }
-        }
         done()
       })
   })
@@ -85,11 +80,6 @@ describe('user.dao module', () => {
       })
       .then((user) => {
         expect(user).to.be.an('object')
-        for (const key in newUser) {
-          if ({}.hasOwnProperty.call(key, newUser)) {
-            newUser[key] = user[key]
-          }
-        }
         done()
       })
   })

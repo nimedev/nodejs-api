@@ -17,7 +17,7 @@ const expect = chai.expect
 
 // Parent block
 describe('custom-error module', () => {
-  it('it should be create a custom error with mongoose style', () => {
+  it('it should create a custom error with mongoose style', () => {
     const path = 'email'
     const message = 'Custom error'
     const kind = 'duplicated'
