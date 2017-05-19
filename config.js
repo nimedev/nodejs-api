@@ -4,11 +4,16 @@
 
 'use strict'
 
+const fs = require('fs')
+const path = require('path')
+
+const getDirectories = srcpath => (
+  fs.readdirSync(srcpath)
+    .filter(file => fs.lstatSync(path.join(srcpath, file)).isDirectory())
+)
+
 // A list with the folder name of the services to load
-const defaultServices = [
-  'routes',
-  'user'
-]
+const defaultServices = getDirectories(path.join(__dirname, 'functions'))
 
 const readServices = () => {
   const services = process.env.NODEJS_API_SERVICES
