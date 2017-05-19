@@ -47,8 +47,11 @@ If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/instal
 ## Environment for server.
 export NODE_ENV="development"
 
+## A list with the name of service (folder) to load. Separate by space.
+export NODEJS_API_SERVICES=undefined
+
 ## Indicate if use as AWS lambda functions
-export NODEJS_API_LAMBDA="undefined"
+export NODEJS_API_LAMBDA=undefined
 ```
 
 You can copy this script in bashrc file, modify the variables and delete variables that don't need modification or are undefined.
@@ -56,12 +59,19 @@ You can copy this script in bashrc file, modify the variables and delete variabl
 To change any of this variables:
 
 ```sh
+# Set lambda funcions
 export NODEJS_API_LAMBDA="true"
+
+# Select services to load
+export NODEJS_API_SERVICES="folder1 folder2 folder3"
+
+# Select only routes service
+export NODEJS_API_SERVICES="routes"
 ```
 
 ### Environment variables by sevice
 
-- [user](user/README.md)
+- [user](functions/user/README.md)
 
 ### Development workflow
 

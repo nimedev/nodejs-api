@@ -10,13 +10,10 @@ console.log('====================================')
 
 const express = require('express')
 
-const routesRouter = require('../functions/routes')
-const userRouter = require('../functions/user')
-
+const serverConfig = require('../config')
 const appSetting = require('../package')
 const errorHandler = require('./error-handler')
 const expressSetup = require('./express-setup')
-const serverConfig = require('./server.config')
 
 const { port, ip } = serverConfig
 
@@ -33,8 +30,11 @@ expressSetup(app)
 
 // LOAD SERVICES ======================
 // ====================================
-app.use('/api', routesRouter)
-app.use('/api', userRouter)
+const services = serverConfig.services.map((service) => {
+  // eslint-disable-next-line global-require, import/no-dynamic-require
+  app.use('/api', require(`../functions/${service}`))
+  return service
+}).join(', ')
 
 // ERROR HANDLER ======================
 // ====================================
@@ -48,6 +48,7 @@ app.listen(port, ip, () => {
 ${appSetting.name} ${appSetting.version}
 IP: ${ip || 'localhost'}
 Port: ${port}
+sevices: ${services}
 Running with NodeJS ${process.version}`)
 })
 
