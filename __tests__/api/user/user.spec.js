@@ -4,11 +4,11 @@
 
 // Set the env variable to test and load server
 process.env.NODE_ENV = 'test'
-const app = require('../../../user')
+const app = require('../../../server')
 
 const chai = require('chai')
 const chaiHttp = require('chai-http')
-const userTools = require('../../../user/user.tools')
+const userTools = require('../../../functions/user/user.tools')
 const testTools = require('../../tools')
 
 // Chai styles

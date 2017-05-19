@@ -7,8 +7,8 @@ process.env.NODE_ENV = 'test'
 
 const chai = require('chai')
 
-const mongooseConnect = require('../../libs/mongoose-connect')
-const testTools = require('../../__tests__/tools')
+const testTools = require('../../../__tests__/tools')
+const mongooseConnect = require('../../../libs/mongoose-connect')
 const userConfig = require('../user.config')
 const userTools = require('./user.tools')
 

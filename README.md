@@ -46,6 +46,9 @@ If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/instal
 # Host configuration
 ## Environment for server.
 export NODE_ENV="development"
+
+## Indicate if use as AWS lambda functions
+export NODEJS_API_LAMBDA="undefined"
 ```
 
 You can copy this script in bashrc file, modify the variables and delete variables that don't need modification or are undefined.
@@ -53,12 +56,11 @@ You can copy this script in bashrc file, modify the variables and delete variabl
 To change any of this variables:
 
 ```sh
-export NODE_ENV=9091
+export NODEJS_API_LAMBDA="true"
 ```
 
 ### Environment variables by sevice
 
-- [routes](routes/README.md)
 - [user](user/README.md)
 
 ### Development workflow
@@ -100,7 +102,7 @@ yarn
 # Or if need install development dependencies run
 yarn install:dev
 ```
-#### Use a process manager like `PM2`.
+#### Use PM2 process manager.
 
 ```sh
 # cd to project folder

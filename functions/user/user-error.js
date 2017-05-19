@@ -5,7 +5,7 @@
 
 'use strict'
 
-const CustomError = require('../libs/error-tools').CustomError
+const CustomError = require('../../libs/error-tools').CustomError
 
 // Templates to create the errors
 const templates = new Map([

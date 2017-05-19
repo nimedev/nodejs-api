@@ -4,8 +4,8 @@
 
 'use strict'
 
-const databaseTools = require('../../libs/database.tools')
-const errorTools = require('../../libs/error-tools')
+const databaseTools = require('../../../libs/database.tools')
+const errorTools = require('../../../libs/error-tools')
 const User = require('../user.model').User
 const userError = require('../user-error')
 

@@ -1,18 +1,17 @@
 {
   "name": "nodejs-api",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "A starting point to implement APIs with node js",
+  "main": "server",
   "scripts": {
     "install:dev": "export NODE_ENV='development' && yarn",
     "lint": "eslint . --ext js",
-    "start": "npm run start:routes | npm run start:user",
-    "start:routes": "node routes",
-    "start:user": "node user",
+    "start": "node server",
     "test": "npm run test:unit && npm run test:api",
     "test:api": "mocha '__tests__/api/**/*.spec.js'",
-    "test:unit": "npm run test:libs && npm run test:user",
+    "test:unit": "npm run test:libs && npm run test:functions",
     "test:libs": "mocha 'libs/**/*.spec.js'",
-    "test:user": "mocha 'user/**/*.spec.js'"
+    "test:functions": "mocha 'functions/**/*.spec.js'"
   },
   "pre-commit": [
     "lint",

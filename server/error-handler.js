@@ -5,7 +5,7 @@
 
 'use strict'
 
-const errorLogger = require('../error-logger')
+const errorLogger = require('../libs/error-logger')
 
 /**
  * Log errors if not are custom errors (have status or are ValidationError)

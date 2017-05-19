@@ -1,5 +1,11 @@
 # Change Log
 
+## [7.0.0] - 2017-05-19
+
+### Modified
+- [Breaking change]: rebuild the file structure to use with AWS lambda.
+
+
 ## [6.0.0] - 2017-05-19
 
 ### Added
