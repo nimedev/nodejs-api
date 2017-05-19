@@ -17,7 +17,7 @@
 ```sh
 node --version
 ```
-The version should be at or above 6.9.5
+The version should be at or above 6.10.3
 
 If you don't have Node.js installed go to [nodejs](https://nodejs.org/en/download/) and install the appropiate version or use [nvm](http://www.sergiolepore.net/2014/06/30/nvm-instalando-y-usando-node-version-manager/) (Recommended).
 
@@ -29,7 +29,7 @@ The version should be at or above 3.
 ```sh
 yarn --version
 ```
-The version should be at or above 0.20.0
+The version should be at or above 0.24.5
 
 If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/install) and install the appropiate version.
 
@@ -46,12 +46,6 @@ If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/instal
 # Host configuration
 ## Environment for server.
 export NODE_ENV="development"
-## Port for api.
-export NODEJS_API_PORT=8080
-
-# MongoDB configuration
-## Uri for default database.
-export NODEJS_API_MONGODB_URI="mongodb://localhost:27017/nodejs-api"
 ```
 
 You can copy this script in bashrc file, modify the variables and delete variables that don't need modification or are undefined.
@@ -59,8 +53,13 @@ You can copy this script in bashrc file, modify the variables and delete variabl
 To change any of this variables:
 
 ```sh
-export NODEJS_API_PORT=8000
+export NODE_ENV=9091
 ```
+
+### Environment variables by sevice
+
+- [routes](routes/README.md)
+- [user](user/README.md)
 
 ### Development workflow
 
@@ -71,14 +70,17 @@ export NODEJS_API_PORT=8000
 yarn
 ```
 
-#### Start the server with yarn
+#### Start with yarn
 
 ```sh
 # cd to project folder
 yarn start
+
+# Or run each service
+yarn start:service-name
 ```
 
-#### Server with nodemon tool
+#### Use nodemon tool
 
 ```sh
 # install nodemon globally
@@ -86,9 +88,6 @@ yarn global add nodemon
 # cd to project folder
 nodemon
 ```
-
-#### Debug with vscode
-Press F5 or run debug command.
 
 ### Production workflow
 - Set the environment variables with production values. `export NODE_ENV='production'`, ...
@@ -131,11 +130,18 @@ yarn remove express
 
 ### Others scripts
 
-To run eslint in console type:
-
 ```sh
-# cd to project folder
+# Run eslint
 yarn lint
+
+# Run all tests
+yarn test
+
+# Run api tests
+yarn test:api
+
+# Run unit tests
+yarn test:unit
 ```
 
 
@@ -144,10 +150,6 @@ yarn lint
 ### JavaScript
 
 **[Nimedev JavaScript style guide](https://github.com/nimedev/javascript)**.
-
-
-## Editors
-This project is configured to use with `VScode`. Also contain pre-configured task for development. See `.vscode` folder to explore the options.
 
 
 ## [Contributing](CONTRIBUTING.md)
