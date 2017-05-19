@@ -1,5 +1,14 @@
 # Change Log
 
+## [7.2.0] - 2017-05-19
+
+### Added
+- Implement detection of services in funcitons folder.
+
+### Modified
+- Rename the environment variable used to load services.
+
+
 ## [7.1.0] - 2017-05-19
 
 ### Added

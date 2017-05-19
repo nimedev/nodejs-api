@@ -16,7 +16,7 @@ const getDirectories = srcpath => (
 const defaultServices = getDirectories(path.join(__dirname, 'functions'))
 
 const readServices = () => {
-  const services = process.env.NODEJS_API_SERVICES
+  const services = process.env.NODEJS_API_LOADER
   return services ? services.split(' ') : defaultServices
 }
 

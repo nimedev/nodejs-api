@@ -65,7 +65,7 @@ If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/instal
 export NODE_ENV="development"
 
 ## A list with the name of service (folder) to load. Separate by space.
-export NODEJS_API_SERVICES=undefined
+export NODEJS_API_LOADER=undefined
 
 ## Indicate if use as AWS lambda functions
 export NODEJS_API_LAMBDA=undefined
@@ -80,10 +80,10 @@ To change any of this variables:
 export NODEJS_API_LAMBDA="true"
 
 # Select services to load
-export NODEJS_API_SERVICES="folder1 folder2 folder3"
+export NODEJS_API_LOADER="folder1 folder2 folder3"
 
 # Select only routes service
-export NODEJS_API_SERVICES="routes"
+export NODEJS_API_LOADER="routes"
 ```
 
 ### Environment variables by sevice
