@@ -100,7 +100,12 @@ yarn
 # Or if need install development dependencies run
 yarn install:dev
 ```
-- Use a process manager like `PM2`.
+#### Use a process manager like `PM2`.
+
+```sh
+# cd to project folder
+pm2 start ecosystem.config.js
+```
 
 > If update the repository repeat the process since `Install workspace dependencies` step.
 

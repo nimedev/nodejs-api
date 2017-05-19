@@ -1,5 +1,14 @@
 # Change Log
 
+## [6.0.0] - 2017-05-19
+
+### Added
+- Add ecosystem.config.js file to run PM2
+
+### Modified
+- [Breaking change]: change to a file structure as a service.
+
+
 ## [5.0.0] - 2017-05-08
 
 ### Modified

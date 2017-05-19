@@ -1,6 +1,6 @@
 {
   "name": "nodejs-api",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "A starting point to implement APIs with node js",
   "scripts": {
     "install:dev": "export NODE_ENV='development' && yarn",
