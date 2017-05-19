@@ -1,0 +1,32 @@
+#%RAML 1.0
+title: Nimedev NODESJS-API REST
+baseUri: http://localhost:8080/api/
+protocols: [ HTTP, HTTPS ]
+mediaType: application/json
+
+uses:
+  user: users.raml
+
+traits:
+  usersErrors: !include users-errors.raml
+
+/users:
+  get:
+    description: Get all users
+    responses:
+      200:
+        body:
+          type: user.Items
+      204:
+        description: The array is empty
+        body:
+          type: array
+  post:
+    description: Create a new user
+    is: [usersErrors]
+    body: user.CreateUser
+    responses:
+      201:
+        body:
+          type: user.CreatedUser
+

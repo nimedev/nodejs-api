@@ -1,0 +1,83 @@
+#%RAML 1.0 Trait
+usage: |
+  This trait should be used to describe response errors for POST method of user colletion
+responses:
+  422:
+    description: Required fields and invalid fields
+    body:
+      properties:
+        name:
+        message:
+        errors:
+          type: object
+      examples:
+        requiredFields:
+          description: Required form properties are missing.
+          value:
+            name: ValidationError
+            message: Validation failed
+            errors:
+              email:
+                message: 'Path `email` is required.'
+                name: ValidatorError
+                properties:
+                  type: required
+                  message: 'Path `{PATH}` is required.'
+                  path: email
+                kind: required
+                path: email
+              role:
+                message: 'Path `role` is required.'
+                name: ValidatorError
+                properties:
+                  type: required
+                  message: 'Path `{PATH}` is required.'
+                  path: role
+                kind: required
+                path: role
+        invalidFields:
+          description: Some form properties has invalid values.
+          value:
+            name: ValidationError
+            message: Validation failed
+            errors:
+              role:
+                message: '`value` is not a valid enum value for path `role`.'
+                name: ValidatorError
+                properties:
+                  enumValues: [Object]
+                  type: enum
+                  message: '`{VALUE}` is not a valid enum value for path `{PATH}`.'
+                  path: role
+                  value: value
+                kind: enum
+                path: role
+                value: value
+              email:
+                message: 'invalid@mail is not a valid email!'
+                name: ValidatorError
+                properties:
+                  message: '{VALUE} is not a valid email!'
+                  type: invalid
+                  path: email
+                  value: invalid@mail
+                kind: invalid
+                path: email
+                value: invalid@mail
+        alreadyExist:
+          description: The user already exists
+          value:
+            name: ValidationError
+            message: Validation failed
+            errors:
+              email:
+                message: 'User already exists'
+                name: ValidatorError
+                properties:
+                  path: email
+                  message: User already exists
+                  type: duplicated
+                  value: repeated@ygh.test
+                kind: duplicated
+                path: email
+                value: repeated@ygh.test

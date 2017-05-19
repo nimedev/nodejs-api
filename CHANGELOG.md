@@ -1,5 +1,12 @@
 # Change Log
 
+## [7.1.0] - 2017-05-19
+
+### Added
+- Implement dynamic loading of services.
+- Add RAML documentation.
+
+
 ## [7.0.0] - 2017-05-19
 
 ### Modified

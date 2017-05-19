@@ -3,12 +3,24 @@
 > A starting point to implement APIs with NodeJS and mongoDB.
 
 
+## Table of Contents
+
+  1. [Prerequisites](#prerequisites)
+  1. [Install dependencies](#install-dependencies)
+  1. [Workflow](#workflow)
+  1. [Style Guides](#style-guides)
+  1. [Contributing](#contributing)
+  1. [Changelog](#changelog)
+  1. [License](#license)
+
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/download/).
 - [npm](https://www.npmjs.com/), installed with Node.js.
 - [yarn](https://yarnpkg.com/) a package manager for project dependencies.
 - [mongoDB](https://www.mongodb.com/download-center?jmp=nav#community).
+
 
 ## Install dependencies
 
@@ -35,6 +47,11 @@ If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/instal
 
 
 ## Workflow
+
+  1. [Environment variables](#environment-variables)
+  1. [Development workflow](#development-workflow)
+  1. [Handle dependencies](#handle-dependencies)
+  1. [Scripts](#others-scripts)
 
 ### Environment variables
 
@@ -101,6 +118,17 @@ yarn global add nodemon
 nodemon
 ```
 
+#### Document with RAML
+
+Write documentation in `raml` folder then run:
+
+```sh
+# cd to project folder
+yarn document
+```
+
+The script create and html documentation in `functions/routes/views/docs/docs.html` path.
+
 ### Production workflow
 - Set the environment variables with production values. `export NODE_ENV='production'`, ...
 - Install workspace dependencies.
@@ -121,7 +149,7 @@ pm2 start ecosystem.config.js
 
 > If update the repository repeat the process since `Install workspace dependencies` step.
 
-### Install/Uninstall/Update dependencies
+### Handle dependencies
 Follow this rules to update dependencies:
 
 - Install dependencies

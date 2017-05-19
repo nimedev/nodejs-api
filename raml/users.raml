@@ -1,0 +1,37 @@
+#%RAML 1.0 Library
+uses:
+  photo: photo.raml
+
+usage: |
+  Use to define types for accounts resource.
+types:
+  ListeableAccount:
+    properties:
+      _id:
+      email:
+      role:
+      creationDate:
+    example:
+      _id: 591f0d231325fb3b20d2f994
+      email: user@mail.com
+      role: user
+      creationDate: '2017-05-19T15:20:12.355Z'
+  Items: ListeableAccount[]
+  CreatedUser:
+    properties:
+      _id:
+      email:
+      role:
+      creationDate:
+    example:
+      _id: 591f0d2c1325fb3b20d2f995
+      email: user@mail.com
+      role: user
+      creationDate: '2017-05-19T15:20:12.355Z'
+  CreateUser:
+    properties:
+      email:
+      role:
+    example:
+      email: 'user@ygh.test'
+      role: user
