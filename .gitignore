@@ -3,6 +3,7 @@
 # compiled output
 tmp
 dist
+functions
 
 # dependencies
 node_modules

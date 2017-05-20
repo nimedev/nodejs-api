@@ -67,8 +67,6 @@ export NODE_ENV="development"
 ## A list with the name of service (folder) to load. Separate by space.
 export NODEJS_API_LOADER=undefined
 
-## Indicate if use as AWS lambda functions
-export NODEJS_API_LAMBDA=undefined
 ```
 
 You can copy this script in bashrc file, modify the variables and delete variables that don't need modification or are undefined.
@@ -76,9 +74,6 @@ You can copy this script in bashrc file, modify the variables and delete variabl
 To change any of this variables:
 
 ```sh
-# Set lambda funcions
-export NODEJS_API_LAMBDA="true"
-
 # Select services to load
 export NODEJS_API_LOADER="folder1 folder2 folder3"
 
@@ -88,7 +83,7 @@ export NODEJS_API_LOADER="routes"
 
 ### Environment variables by sevice
 
-- [user](functions/user/README.md)
+- [user](services/user/README.md)
 
 ### Development workflow
 
@@ -127,7 +122,7 @@ Write documentation in `raml` folder then run:
 yarn document
 ```
 
-The script create and html documentation in `functions/routes/views/docs/docs.html` path.
+The script create and html documentation in `services/routes/views/docs/docs.html` path.
 
 ### Production workflow
 - Set the environment variables with production values. `export NODE_ENV='production'`, ...

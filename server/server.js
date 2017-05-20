@@ -32,7 +32,7 @@ expressSetup(app)
 // ====================================
 const services = serverConfig.services.map((service) => {
   // eslint-disable-next-line global-require, import/no-dynamic-require
-  app.use('/api', require(`../functions/${service}`))
+  app.use('/api', require(`../services/${service}`))
   return service
 }).join(', ')
 

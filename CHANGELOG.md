@@ -1,5 +1,14 @@
 # Change Log
 
+## [8.0.0] - 2017-05-20
+
+### Deleted
+- [Breaking change] Delete NODEJS_API_LAMBDA environment variable.
+
+### Modified
+- [Breaking change] Rename functions folder to services.
+
+
 ## [7.2.0] - 2017-05-19
 
 ### Added

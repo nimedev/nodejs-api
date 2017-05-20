@@ -1,18 +1,18 @@
 {
   "name": "nodejs-api",
-  "version": "7.2.0",
+  "version": "8.0.0",
   "description": "A starting point to implement APIs with node js",
   "main": "server",
   "scripts": {
-    "document": "raml2html raml/api.raml -o functions/routes/views/docs/docs.html",
+    "document": "raml2html raml/api.raml -o services/routes/views/docs/docs.html",
     "install:dev": "export NODE_ENV='development' && yarn",
     "lint": "eslint . --ext js",
     "start": "node server",
     "test": "npm run test:unit && npm run test:api",
     "test:api": "mocha '__tests__/api/**/*.spec.js'",
-    "test:unit": "npm run test:libs && npm run test:functions",
+    "test:unit": "npm run test:libs && npm run test:services",
     "test:libs": "mocha 'libs/**/*.spec.js'",
-    "test:functions": "mocha 'functions/**/*.spec.js'"
+    "test:services": "mocha 'services/**/*.spec.js'"
   },
   "pre-commit": [
     "lint",

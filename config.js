@@ -13,7 +13,7 @@ const getDirectories = srcpath => (
 )
 
 // A list with the folder name of the services to load
-const defaultServices = getDirectories(path.join(__dirname, 'functions'))
+const defaultServices = getDirectories(path.join(__dirname, 'services'))
 
 const readServices = () => {
   const services = process.env.NODEJS_API_LOADER

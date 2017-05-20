@@ -8,7 +8,7 @@ const app = require('../../../server')
 
 const chai = require('chai')
 const chaiHttp = require('chai-http')
-const userTools = require('../../../functions/user/user.tools')
+const userTools = require('../../../services/user/user.tools')
 const testTools = require('../../tools')
 
 // Chai styles
@@ -16,7 +16,7 @@ chai.use(chaiHttp)
 const expect = chai.expect
 
 // Parent block
-describe('User service', () => {
+describe('user service', () => {
   // Remove all related with users
   before((done) => {
     userTools.removingAllUsers().then(() => done())
