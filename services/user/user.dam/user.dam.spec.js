@@ -10,7 +10,7 @@ const chai = require('chai')
 const testTools = require('../../../__tests__/tools')
 const mongooseConnect = require('../../../libs/mongoose-connect')
 const userConfig = require('../user.config')
-const userTools = require('./user.tools')
+const userDAM = require('./user.dam')
 
 const expect = chai.expect
 
@@ -18,17 +18,17 @@ const expect = chai.expect
 mongooseConnect(userConfig.mongoose)
 
 // Parent block
-describe('user.tools module', () => {
+describe('user.dam module', () => {
   const newUser = {
     email: 'user@mail.com',
     role: 'user'
   }
   before((done) => {
-    userTools.removingAllUsers().then(() => done())
+    userDAM.removingAllUsers().then(() => done())
   })
 
   it('it should not create a user without required inputs', (done) => {
-    userTools
+    userDAM
       .creatingUser({})
       .catch((err) => {
         expect(err).to.be.instanceof(Error)
@@ -41,7 +41,7 @@ describe('user.tools module', () => {
   })
 
   it('it should create a user', (done) => {
-    userTools
+    userDAM
       .creatingUser(newUser)
       .then((user) => {
         expect(user).to.be.an('object')
@@ -50,7 +50,7 @@ describe('user.tools module', () => {
   })
 
   it('it should not create a user if alreade exits', (done) => {
-    userTools
+    userDAM
       .creatingUser(newUser)
       .catch((err) => {
         expect(err).to.be.instanceof(Error)
@@ -62,7 +62,7 @@ describe('user.tools module', () => {
   })
 
   it('it should not find a user if not exits', (done) => {
-    userTools
+    userDAM
       .findingUser({
         email: 'no@mail.com'
       })
@@ -75,7 +75,7 @@ describe('user.tools module', () => {
   })
 
   it('it should find a user', (done) => {
-    userTools
+    userDAM
       .findingUser({
         email: newUser.email
       })
@@ -86,7 +86,7 @@ describe('user.tools module', () => {
   })
 
   it('it should get a list of user', (done) => {
-    userTools
+    userDAM
       .listingUsers()
       .then((users) => {
         expect(users).to.be.an('array')

@@ -8,7 +8,7 @@ const app = require('../../../server')
 
 const chai = require('chai')
 const chaiHttp = require('chai-http')
-const userTools = require('../../../services/user/user.tools')
+const userDAM = require('../../../services/user/user.dam')
 const testTools = require('../../tools')
 
 // Chai styles
@@ -19,7 +19,7 @@ const expect = chai.expect
 describe('user service', () => {
   // Remove all related with users
   before((done) => {
-    userTools.removingAllUsers().then(() => done())
+    userDAM.removingAllUsers().then(() => done())
   })
 
   /*
@@ -133,7 +133,7 @@ describe('user service', () => {
         email: 'user_to_getbyid@mail.test',
         role: 'user'
       }
-      userTools
+      userDAM
         .creatingUser(user)
         .then((newUser) => {
           chai.request(app)

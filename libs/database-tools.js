@@ -1,6 +1,6 @@
 /**
  * Common actions for crud operations
- * @module database.tools
+ * @module database-tools
  */
 
 'use strict'

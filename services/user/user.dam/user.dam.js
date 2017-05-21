@@ -1,10 +1,11 @@
 /**
- * @module user.tools
+ * Data Access module (DAM) for User model
+ * @module user.dam
  */
 
 'use strict'
 
-const databaseTools = require('../../../libs/database.tools')
+const databaseTools = require('../../../libs/database-tools')
 const errorTools = require('../../../libs/error-tools')
 const User = require('../user.model').User
 const userError = require('../user-error')

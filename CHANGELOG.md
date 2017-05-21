@@ -1,5 +1,11 @@
 # Change Log
 
+## [8.1.0] - 2017-05-21
+
+### Modified
+- Rename user.tools to user.dam.
+
+
 ## [8.0.1] - 2017-05-21
 
 ### Added

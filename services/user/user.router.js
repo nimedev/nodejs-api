@@ -11,7 +11,7 @@ const express = require('express')
 const mongooseConnect = require('../../libs/mongoose-connect')
 const userConfig = require('./user.config')
 const dummy = require('./user.middleware/dummy')
-const userTools = require('./user.tools')
+const userDAM = require('./user.dam')
 
 const router = express.Router()
 const dummyMiddleware = dummy.useDummy
@@ -23,7 +23,7 @@ mongooseConnect(userConfig.mongoose)
 router
   .post('/users', dummyMiddleware, (req, res, next) => {
     // Try to create a user
-    userTools
+    userDAM
       .creatingUser(req.body)
       .then(user => res.status(201).json({
         user
@@ -31,14 +31,14 @@ router
       .catch(next)
   })
   .get('/users', dummyMiddleware, (req, res, next) => {
-    userTools
+    userDAM
       .listingUsers()
       .then(users => res.json(users))
       .catch(next)
   })
   .get('/users/:userID', dummyMiddleware, (req, res, next) => {
     const userID = req.params.userID
-    userTools
+    userDAM
       .findingUser({
         _id: userID
       })
