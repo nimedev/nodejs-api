@@ -1,5 +1,11 @@
 # Change Log
 
+## [8.1.1] - 2017-05-21
+
+### Modified
+- Hide console.log in server when NODE_ENV is equal to 'test'.
+
+
 ## [8.1.0] - 2017-05-21
 
 ### Modified

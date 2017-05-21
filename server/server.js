@@ -6,7 +6,7 @@
 'use strict'
 
 // eslint-disable-next-line no-console
-console.log('====================================')
+process.env.NODE_ENV !== 'test' && console.log('====================================')
 
 const express = require('express')
 
@@ -44,7 +44,7 @@ errorHandler(app)
 // ====================================
 app.listen(port, ip, () => {
   // eslint-disable-next-line no-console
-  console.log(`
+  process.env.NODE_ENV !== 'test' && console.log(`
 ${appSetting.name} ${appSetting.version}
 IP: ${ip || 'localhost'}
 Port: ${port}
