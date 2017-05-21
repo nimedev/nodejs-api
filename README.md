@@ -63,6 +63,8 @@ If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/instal
 # Host configuration
 ## Environment for server.
 export NODE_ENV="development"
+## Port for api.
+export NODEJS_API_API_PORT=8080
 
 ## A list with the name of service (folder) to load. Separate by space.
 export NODEJS_API_LOADER=undefined

@@ -1,5 +1,11 @@
 # Change Log
 
+## [8.0.1] - 2017-05-21
+
+### Added
+- Add NODEJS_API_API_PORT to README file.
+
+
 ## [8.0.0] - 2017-05-20
 
 ### Deleted
