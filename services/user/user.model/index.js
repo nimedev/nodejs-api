@@ -4,7 +4,7 @@
 
 'use strict'
 
-const User = require('./user-schema')
+const User = require('./user.schema')
 
 /**
  * Schemas for user component

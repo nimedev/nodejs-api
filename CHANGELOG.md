@@ -1,5 +1,11 @@
 # Change Log
 
+## [8.1.2] - 2017-05-21
+
+### Fixed
+- Fix name of user.schema file.
+
+
 ## [8.1.1] - 2017-05-21
 
 ### Modified
