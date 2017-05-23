@@ -1,6 +1,5 @@
 /**
- * Settings for API
- * @module config
+ * @module user.config
  */
 
 'use strict'

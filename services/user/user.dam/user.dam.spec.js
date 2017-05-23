@@ -49,7 +49,7 @@ describe('user.dam module', () => {
       })
   })
 
-  it('it should not create a user if alreade exits', (done) => {
+  it('it should not create a user if already exits', (done) => {
     userDAM
       .creatingUser(newUser)
       .catch((err) => {

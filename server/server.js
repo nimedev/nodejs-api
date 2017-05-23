@@ -48,7 +48,7 @@ app.listen(port, ip, () => {
 ${appSetting.name} ${appSetting.version}
 IP: ${ip || 'localhost'}
 Port: ${port}
-sevices: ${services}
+Services: ${services}
 Running with NodeJS ${process.version}`)
 })
 

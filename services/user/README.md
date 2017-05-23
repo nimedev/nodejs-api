@@ -1,4 +1,4 @@
-## User service for NODEJS API
+## user service for NODEJS API
 
 > Group API routes for user sevice.
 
