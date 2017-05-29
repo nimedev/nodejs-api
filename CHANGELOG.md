@@ -1,5 +1,11 @@
 # Change Log
 
+## [8.1.5] - 2017-05-29
+
+### Fixed
+- Fix enumeration in install dependencies steps.
+
+
 ## [8.1.4] - 2017-05-29
 
 ### Modified
