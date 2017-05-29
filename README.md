@@ -18,7 +18,6 @@
 
 - [Node.js](https://nodejs.org/en/download/).
 - [npm](https://www.npmjs.com/), installed with Node.js.
-- [yarn](https://yarnpkg.com/) a package manager for project dependencies.
 - [mongoDB](https://www.mongodb.com/download-center?jmp=nav#community).
 
 
@@ -33,17 +32,21 @@ The version should be at or above 6.10.3
 
 If you don't have Node.js installed go to [nodejs](https://nodejs.org/en/download/) and install the appropiate version or use [nvm](http://www.sergiolepore.net/2014/06/30/nvm-instalando-y-usando-node-version-manager/) (Recommended).
 
-#### 2) Install `mongoDB`
-The version should be at or above 3.
-
-#### 3) Check `yarn` version.
+#### 3) Check `npm` version.
 
 ```sh
-yarn --version
+npm --version
 ```
-The version should be at or above 0.24.5
+The version should be at or above 5.0.0
 
-If you don't have yarn installed go to [yarn](https://yarnpkg.com/en/docs/install) and install the appropiate version.
+Update npm version
+
+```sh
+npm update npm -g
+```
+
+#### 3) Install `mongoDB`
+The version should be at or above 3.
 
 
 ## Workflow
@@ -93,24 +96,21 @@ export NODEJS_API_LOADER="routes"
 
 ```sh
 # cd to project folder
-yarn
+npm install
 ```
 
-#### Start with yarn
+#### Start with npm script
 
 ```sh
 # cd to project folder
-yarn start
-
-# Or run each service
-yarn start:service-name
+npm start
 ```
 
 #### Use nodemon tool
 
 ```sh
 # install nodemon globally
-yarn global add nodemon
+npm install nodemon -g
 # cd to project folder
 nodemon
 ```
@@ -121,7 +121,7 @@ Write documentation in `raml` folder then run:
 
 ```sh
 # cd to project folder
-yarn document
+npm run document
 ```
 
 The script create and html documentation in `services/routes/views/docs/docs.html` path.
@@ -132,10 +132,10 @@ The script create and html documentation in `services/routes/views/docs/docs.htm
 
 ```sh
 # cd to project folder
-yarn
+npm install
 
 # Or if need install development dependencies run
-yarn install:dev
+npm run install:dev
 ```
 #### Use PM2 process manager.
 
@@ -154,18 +154,25 @@ Follow this rules to update dependencies:
 ```sh
 # To install production dependencies
 # cd to project folder
-yarn add express --exact
+npm install express
 
 # To install development dependencies
 # cd to project folder
-yarn add eslint --exact --dev
+npm install eslint -D
 ```
 
 - Uninstall dependencies
 
 ```sh
 # cd to project folder
-yarn remove express
+npm uninstall express
+```
+
+- Check outdated dependencies
+
+```sh
+# cd to project folder
+npm outdated --long
 ```
 
 - **To Upgrade any dependencies follow `Uninstall dependencies` step and install again like `Install dependencies`.**
@@ -174,16 +181,16 @@ yarn remove express
 
 ```sh
 # Run eslint
-yarn lint
+npm run lint
 
 # Run all tests
-yarn test
+npm run test
 
 # Run api tests
-yarn test:api
+npm run test:api
 
 # Run unit tests
-yarn test:unit
+npm run test:unit
 ```
 
 
