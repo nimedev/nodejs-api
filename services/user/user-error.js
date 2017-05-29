@@ -13,8 +13,8 @@ const templates = new Map([
     name: 'UserNotFound',
     message: 'User not found',
     status: 404,
-    field: 'email'
-  }]
+    field: 'email',
+  }],
 ])
 
 /**

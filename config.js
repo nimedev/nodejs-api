@@ -23,7 +23,7 @@ const readServices = () => {
 const config = {
   port: process.env.OPENSHIFT_NODEJS_PORT || process.env.NODEJS_API_PORT || 8080,
   ip: process.env.OPENSHIFT_NODEJS_IP || undefined,
-  services: readServices()
+  services: readServices(),
 }
 
 // Test and log app settings

@@ -74,5 +74,5 @@ const findingOne = (model, query, projection = {}, populate = []) => {
  */
 module.exports = Object.freeze({
   finding,
-  findingOne
+  findingOne,
 })

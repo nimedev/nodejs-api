@@ -84,5 +84,5 @@ module.exports = Object.freeze({
   creatingUser,
   findingUser,
   listingUsers,
-  removingAllUsers: process.env.NODE_ENV === 'test' ? removingAllUsers : undefined
+  removingAllUsers: process.env.NODE_ENV === 'test' ? removingAllUsers : undefined,
 })

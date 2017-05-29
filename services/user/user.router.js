@@ -26,7 +26,7 @@ router
     userDAM
       .creatingUser(req.body)
       .then(user => res.status(201).json({
-        user
+        user,
       }))
       .catch(next)
   })
@@ -40,7 +40,7 @@ router
     const userID = req.params.userID
     userDAM
       .findingUser({
-        _id: userID
+        _id: userID,
       })
       .then(user => res.json(user))
       .catch(next)

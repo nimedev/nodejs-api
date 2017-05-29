@@ -22,7 +22,7 @@ const morgan = isInDevelopment ? require('morgan') : null
 module.exports = (app) => {
   // Use body parser so we can grab information from POST requests
   app.use(bodyParser.urlencoded({
-    extended: true
+    extended: true,
   }))
   app.use(bodyParser.json())
 

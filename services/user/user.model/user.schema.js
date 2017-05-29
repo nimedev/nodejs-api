@@ -13,19 +13,19 @@ const UserSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   role: {
     type: String,
     required: true,
-    enum: ['user', 'admin']
+    enum: ['user', 'admin'],
   },
 
   /** auto-generate fields */
   creationDate: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 })
 
 /**

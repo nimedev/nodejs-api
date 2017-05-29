@@ -21,7 +21,7 @@ mongooseConnect(userConfig.mongoose)
 describe('user.dam module', () => {
   const newUser = {
     email: 'user@mail.com',
-    role: 'user'
+    role: 'user',
   }
   before((done) => {
     userDAM.removingAllUsers().then(() => done())
@@ -64,7 +64,7 @@ describe('user.dam module', () => {
   it('it should not find a user if not exits', (done) => {
     userDAM
       .findingUser({
-        email: 'no@mail.com'
+        email: 'no@mail.com',
       })
       .catch((err) => {
         expect(err).to.be.instanceof(Error)
@@ -77,7 +77,7 @@ describe('user.dam module', () => {
   it('it should find a user', (done) => {
     userDAM
       .findingUser({
-        email: newUser.email
+        email: newUser.email,
       })
       .then((user) => {
         expect(user).to.be.an('object')

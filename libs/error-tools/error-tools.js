@@ -19,7 +19,7 @@ class CustomError extends Error {
     message,
     name,
     status,
-    field
+    field,
   } = {}) {
     // Get the properties of the error according with the name
     super()
@@ -47,12 +47,12 @@ const validationError = (path, message, type, value) => {
     path,
     message,
     type,
-    value
+    value,
   })
   return error
 }
 
 module.exports = {
   CustomError,
-  validationError
+  validationError,
 }

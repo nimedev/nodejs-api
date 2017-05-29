@@ -17,10 +17,10 @@ const config = {
     // Setting for moongoose
     options: {
       db: {
-        safe: true
-      }
-    }
-  }
+        safe: true,
+      },
+    },
+  },
 }
 
 // Test and log app settings

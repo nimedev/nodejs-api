@@ -18,5 +18,5 @@ module.exports = Object.freeze({
     // eslint-disable-next-line no-console
     process.env.NODE_ENV !== 'test' && console.log('DUMMY MIDDLEWARE')
     next()
-  }
+  },
 })

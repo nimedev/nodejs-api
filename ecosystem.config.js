@@ -10,6 +10,6 @@ const path = require('path')
 module.exports = {
   apps: [{
     name: 'nodejs-api',
-    script: path.normalize(`${__dirname}/server/index.js`)
-  }]
+    script: path.normalize(`${__dirname}/server/index.js`),
+  }],
 }

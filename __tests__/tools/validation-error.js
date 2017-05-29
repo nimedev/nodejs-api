@@ -34,5 +34,5 @@ const checkErrorsProperty = (errors, path, kind, value = null, isSubschema = fal
 }
 
 module.exports = Object.freeze({
-  checkErrorsProperty
+  checkErrorsProperty,
 })

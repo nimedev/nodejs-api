@@ -25,5 +25,5 @@ const checkResponseError = (res, status, name) => {
 }
 
 module.exports = Object.freeze({
-  checkResponseError
+  checkResponseError,
 })

@@ -47,7 +47,7 @@ describe('user service', () => {
     it('it should POST a user', (done) => {
       const user = {
         email: 'user@mail.test',
-        role: 'user'
+        role: 'user',
       }
       chai.request(app)
         .post(url)
@@ -64,7 +64,7 @@ describe('user service', () => {
     it('it should not POST a user if already exits', (done) => {
       const user = {
         email: 'user@mail.test',
-        role: 'user'
+        role: 'user',
       }
       chai
         .request(app)
@@ -79,7 +79,7 @@ describe('user service', () => {
     it('it should POST a second admin', (done) => {
       const user = {
         email: 'admin@mail.test',
-        role: 'admin'
+        role: 'admin',
       }
       chai.request(app)
         .post(url)
@@ -131,7 +131,7 @@ describe('user service', () => {
     it('it should GET a user by the given id', (done) => {
       const user = {
         email: 'user_to_getbyid@mail.test',
-        role: 'user'
+        role: 'user',
       }
       userDAM
         .creatingUser(user)
