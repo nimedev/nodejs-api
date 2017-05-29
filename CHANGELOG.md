@@ -1,5 +1,15 @@
 # Change Log
 
+## [8.1.4] - 2017-05-29
+
+### Modified
+- Upgrade to npm v5.0.0 and update README.md documentation.
+
+### Updated
+- Upgrade dep: body-parser express mongoose.
+- Upgrade devDep: eslint-config-nimedev-base eslint-plugin-import mocha morgan.
+
+
 ## [8.1.3] - 2017-05-23
 
 ### Fixed
