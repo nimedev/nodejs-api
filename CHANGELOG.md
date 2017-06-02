@@ -6,6 +6,9 @@
 - Fix install:dev script.
 - Fix links in workflow section.
 
+### Modified
+- Change name of user service database.
+
 ### Updated
 - Upgrade dep: mongoose.
 - Upgrade devDep: chai eslint-config-nimedev-base.

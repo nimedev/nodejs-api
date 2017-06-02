@@ -12,7 +12,7 @@ const config = {
     uri: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL ||
     process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME ||
     process.env.NODEJS_API_USER_MONGODB_URI ||
-    `mongodb://localhost:27017/nodejs-api:user${mongoSuffix}`,
+    `mongodb://localhost:27017/nodejs-api_user${mongoSuffix}`,
 
     // Setting for moongoose
     options: {
