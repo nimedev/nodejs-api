@@ -5,7 +5,7 @@
   "main": "server",
   "scripts": {
     "document": "raml2html raml/api.raml -o services/routes/views/docs/docs.html",
-    "install:dev": "export NODE_ENV='development' && npm install",
+    "install:dev": "npm install --production=false",
     "lint": "eslint . --ext js",
     "start": "node server",
     "test": "npm run test:unit && npm run test:api",
