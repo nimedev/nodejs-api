@@ -40,11 +40,11 @@
     "mongoose": "4.10.3"
   },
   "devDependencies": {
-    "chai": "3.5.0",
+    "chai": "4.0.1",
     "chai-http": "3.0.0",
     "errorhandler": "1.5.0",
     "eslint": "3.19.0",
-    "eslint-config-nimedev-base": "4.2.0",
+    "eslint-config-nimedev-base": "5.0.0",
     "eslint-plugin-import": "2.3.0",
     "mocha": "3.4.2",
     "morgan": "1.8.2",
