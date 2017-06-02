@@ -42,7 +42,7 @@ The version should be at or above 5.0.0
 Update npm version
 
 ```sh
-npm update npm -g
+npm install -g npm
 ```
 
 #### 3) Install `mongoDB`
@@ -53,6 +53,7 @@ The version should be at or above 3.
 
   1. [Environment variables](#environment-variables)
   1. [Development workflow](#development-workflow)
+  1. [Production workflow](#production-workflow)
   1. [Handle dependencies](#handle-dependencies)
   1. [Scripts](#others-scripts)
 

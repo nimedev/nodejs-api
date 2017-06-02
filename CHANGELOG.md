@@ -1,5 +1,16 @@
 # Change Log
 
+## [8.1.7] - 2017-06-02
+
+### Fixed
+- Fix install:dev script.
+- Fix links in workflow section.
+
+### Updated
+- Upgrade dep: mongoose.
+- Upgrade devDep: chai eslint-config-nimedev-base.
+
+
 ## [8.1.6] - 2017-05-29
 
 ### Fixed
