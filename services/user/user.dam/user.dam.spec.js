@@ -8,14 +8,9 @@ process.env.NODE_ENV = 'test'
 const chai = require('chai')
 
 const testTools = require('../../../__tests__/tools')
-const mongooseConnect = require('../../../libs/mongoose-connect')
-const userConfig = require('../user.config')
 const userDAM = require('./user.dam')
 
 const expect = chai.expect
-
-// Create the database connection
-mongooseConnect(userConfig.mongoose)
 
 // Parent block
 describe('user.dam module', () => {

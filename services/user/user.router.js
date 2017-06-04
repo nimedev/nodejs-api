@@ -8,16 +8,11 @@
 
 const express = require('express')
 
-const mongooseConnect = require('../../libs/mongoose-connect')
-const userConfig = require('./user.config')
 const dummy = require('./user.middleware/dummy')
 const userDAM = require('./user.dam')
 
 const router = express.Router()
 const dummyMiddleware = dummy.useDummy
-
-// Connect with mongo usign mongoose
-mongooseConnect(userConfig.mongoose)
 
 // Create service routes
 router

@@ -186,7 +186,7 @@ npm outdated --long
 npm run lint
 
 # Run all tests
-npm run test
+npm test
 
 # Run api tests
 npm run test:api

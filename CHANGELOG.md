@@ -1,5 +1,11 @@
 # Change Log
 
+## [8.2.0] - 2017-06-04
+
+### Added
+- Implement user.connection module to create the db connection for this service.
+
+
 ## [8.1.7] - 2017-06-02
 
 ### Fixed

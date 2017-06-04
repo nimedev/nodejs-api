@@ -7,6 +7,8 @@
 
 const mongoose = require('mongoose')
 
+const userConnection = require('../user.connection')
+
 const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
@@ -31,4 +33,4 @@ const UserSchema = new Schema({
 /**
  * User mongoose model
  */
-module.exports = mongoose.model('User', UserSchema)
+module.exports = userConnection.model('User', UserSchema)
