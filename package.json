@@ -1,6 +1,6 @@
 {
   "name": "nodejs-api",
-  "version": "8.2.0",
+  "version": "8.2.1",
   "description": "A starting point to implement APIs with node js",
   "main": "server",
   "scripts": {
@@ -37,7 +37,7 @@
     "compression": "1.6.2",
     "cors": "2.8.3",
     "express": "4.15.3",
-    "mongoose": "4.10.4"
+    "mongoose": "4.10.5"
   },
   "devDependencies": {
     "chai": "4.0.2",

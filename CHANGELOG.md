@@ -1,5 +1,12 @@
 # Change Log
 
+## [8.2.1] - 2017-06-11
+
+### Updated
+- Upgrade dep: mongoose.
+- Upgrade devDep: chai.
+
+
 ## [8.2.0] - 2017-06-04
 
 ### Added
