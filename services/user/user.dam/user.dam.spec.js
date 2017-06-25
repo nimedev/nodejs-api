@@ -7,8 +7,8 @@ process.env.NODE_ENV = 'test'
 
 const chai = require('chai')
 
-const testTools = require('../../../__tests__/tools')
-const userDAM = require('./user.dam')
+const { checkErrorsProperty } = require('../../../__tests__/tools')
+const { removingAllUsers, creatingUser, findingUser, listingUsers } = require('./user.dam')
 
 const expect = chai.expect
 
@@ -19,25 +19,23 @@ describe('user.dam module', () => {
     role: 'user',
   }
   before((done) => {
-    userDAM.removingAllUsers().then(() => done())
+    removingAllUsers().then(() => done())
   })
 
   it('it should not create a user without required inputs', (done) => {
-    userDAM
-      .creatingUser({})
+    creatingUser({})
       .catch((err) => {
         expect(err).to.be.instanceof(Error)
         expect(err).to.have.property('name').eql('ValidationError')
         expect(err).to.have.property('errors').to.be.an('object')
-        testTools.checkErrorsProperty(err.errors, 'email', 'required', undefined)
-        testTools.checkErrorsProperty(err.errors, 'role', 'required', undefined)
+        checkErrorsProperty(err.errors, 'email', 'required', undefined)
+        checkErrorsProperty(err.errors, 'role', 'required', undefined)
         done()
       })
   })
 
   it('it should create a user', (done) => {
-    userDAM
-      .creatingUser(newUser)
+    creatingUser(newUser)
       .then((user) => {
         expect(user).to.be.an('object')
         done()
@@ -45,22 +43,20 @@ describe('user.dam module', () => {
   })
 
   it('it should not create a user if already exits', (done) => {
-    userDAM
-      .creatingUser(newUser)
+    creatingUser(newUser)
       .catch((err) => {
         expect(err).to.be.instanceof(Error)
         expect(err).to.have.property('name').eql('ValidationError')
         expect(err).to.have.property('errors').to.be.an('object')
-        testTools.checkErrorsProperty(err.errors, 'email', 'duplicated', newUser.email)
+        checkErrorsProperty(err.errors, 'email', 'duplicated', newUser.email)
         done()
       })
   })
 
   it('it should not find a user if not exits', (done) => {
-    userDAM
-      .findingUser({
-        email: 'no@mail.com',
-      })
+    findingUser({
+      email: 'no@mail.com',
+    })
       .catch((err) => {
         expect(err).to.be.instanceof(Error)
         expect(err).to.have.property('name').eql('UserNotFound')
@@ -70,10 +66,9 @@ describe('user.dam module', () => {
   })
 
   it('it should find a user', (done) => {
-    userDAM
-      .findingUser({
-        email: newUser.email,
-      })
+    findingUser({
+      email: newUser.email,
+    })
       .then((user) => {
         expect(user).to.be.an('object')
         done()
@@ -81,8 +76,7 @@ describe('user.dam module', () => {
   })
 
   it('it should get a list of user', (done) => {
-    userDAM
-      .listingUsers()
+    listingUsers()
       .then((users) => {
         expect(users).to.be.an('array')
         expect(users.length).eql(1)

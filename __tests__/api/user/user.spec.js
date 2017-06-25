@@ -8,8 +8,8 @@ const app = require('../../../server')
 
 const chai = require('chai')
 const chaiHttp = require('chai-http')
-const userDAM = require('../../../services/user/user.dam')
-const testTools = require('../../tools')
+const { removingAllUsers, creatingUser } = require('../../../services/user/user.dam')
+const { checkErrorsProperty, checkResponseError } = require('../../tools')
 
 // Chai styles
 chai.use(chaiHttp)
@@ -19,7 +19,7 @@ const expect = chai.expect
 describe('user service', () => {
   // Remove all related with users
   before((done) => {
-    userDAM.removingAllUsers().then(() => done())
+    removingAllUsers().then(() => done())
   })
 
   /*
@@ -36,9 +36,9 @@ describe('user service', () => {
         .post(url)
         .send(user)
         .end((err, res) => {
-          testTools.checkResponseError(res, 422, 'ValidationError')
-          testTools.checkErrorsProperty(res.body.errors, 'email', 'required')
-          testTools.checkErrorsProperty(res.body.errors, 'role', 'required')
+          checkResponseError(res, 422, 'ValidationError')
+          checkErrorsProperty(res.body.errors, 'email', 'required')
+          checkErrorsProperty(res.body.errors, 'role', 'required')
           done()
         })
     })
@@ -71,8 +71,8 @@ describe('user service', () => {
         .post(url)
         .send(user)
         .end((err, res) => {
-          testTools.checkResponseError(res, 422, 'ValidationError')
-          testTools.checkErrorsProperty(res.body.errors, 'email', 'duplicated')
+          checkResponseError(res, 422, 'ValidationError')
+          checkErrorsProperty(res.body.errors, 'email', 'duplicated')
           done()
         })
     })
@@ -124,7 +124,7 @@ describe('user service', () => {
         .request(app)
         .get(`${url}/000000000000000000000000`)
         .end((err, res) => {
-          testTools.checkResponseError(res, 404, 'UserNotFound')
+          checkResponseError(res, 404, 'UserNotFound')
           done()
         })
     })
@@ -133,8 +133,7 @@ describe('user service', () => {
         email: 'user_to_getbyid@mail.test',
         role: 'user',
       }
-      userDAM
-        .creatingUser(user)
+      creatingUser(user)
         .then((newUser) => {
           chai.request(app)
             .get(`${url}/${newUser._id}`)

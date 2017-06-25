@@ -6,12 +6,10 @@
 
 'use strict'
 
-const apiError = require('./api-error')
-const validationError = require('./validation-error')
+const { checkResponseError } = require('./api-error')
+const { checkErrorsProperty } = require('./validation-error')
 
-module.exports = Object.freeze(
-  Object.assign({},
-    apiError,
-    validationError
-  )
-)
+module.exports = Object.freeze({
+  checkResponseError,
+  checkErrorsProperty,
+})

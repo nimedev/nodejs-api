@@ -5,9 +5,9 @@
 
 'use strict'
 
-const databaseTools = require('../../../libs/database-tools')
-const errorTools = require('../../../libs/error-tools')
-const User = require('../user.model').User
+const { finding, findingOne } = require('../../../libs/database-tools')
+const { validationError } = require('../../../libs/error-tools')
+const { User } = require('../user.model')
 const userError = require('../user-error')
 
 /**
@@ -31,7 +31,7 @@ const creatingUser = (user) => {
 
       // Override error if is a duplicated key error
       if (err.code === 11000) {
-        newErr = errorTools.validationError('email', 'User already exits', 'duplicated', user.email)
+        newErr = validationError('email', 'User already exits', 'duplicated', user.email)
       }
       return Promise.reject(newErr)
     })
@@ -52,8 +52,7 @@ const creatingUser = (user) => {
  * @returns {Promise} Resolve if find the user. Return the finded user object.
  */
 const findingUser = (query, projection, populate) => (
-  databaseTools
-    .findingOne(User, query, projection, populate)
+  findingOne(User, query, projection, populate)
     .then((user) => {
       // Reject the promise if no find user and not error happends
       if (!user) return Promise.reject(userError('UserNotFound'))
@@ -69,7 +68,7 @@ const findingUser = (query, projection, populate) => (
  *  function of database module (Don't pass de model).
  * @returns {Promise} Mongoose exec() promise
  */
-const listingUsers = (...params) => databaseTools.finding(User, ...params)
+const listingUsers = (...params) => finding(User, ...params)
 
 /**
  * Remove all documents (only in test environment)

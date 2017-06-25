@@ -1,5 +1,18 @@
 # Change Log
 
+## [8.3.0] - 2017-06-25
+
+### Deleted
+- Remove pre-commit hook.
+
+### Modified
+- Import some modules usign destructuring.
+
+### Updated
+- Upgrade to eslint v4.
+- Upgrade dep: mongoose.
+
+
 ## [8.2.1] - 2017-06-11
 
 ### Updated

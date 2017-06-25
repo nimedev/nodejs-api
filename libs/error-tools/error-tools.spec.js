@@ -6,7 +6,7 @@
 process.env.NODE_ENV = 'test'
 
 const chai = require('chai')
-const errorTools = require('./error-tools')
+const { validationError } = require('./error-tools')
 
 // Chai styles
 const expect = chai.expect
@@ -17,7 +17,7 @@ describe('error-tools module', () => {
     const path = 'email'
     const message = 'Custom error'
     const kind = 'duplicated'
-    const error = errorTools.validationError(path, message, kind, path)
+    const error = validationError(path, message, kind, path)
     expect(error).to.be.a('object')
     expect(error).to.be.have.property('name').eql('ValidationError')
     expect(error).to.be.have.property('errors')
