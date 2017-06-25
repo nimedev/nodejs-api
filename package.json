@@ -14,10 +14,6 @@
     "test:libs": "mocha 'libs/**/*.spec.js'",
     "test:services": "mocha 'services/**/*.spec.js'"
   },
-  "pre-commit": [
-    "lint",
-    "test"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/nimedev/nodejs-api.git"
@@ -48,7 +44,6 @@
     "eslint-plugin-import": "2.3.0",
     "mocha": "3.4.2",
     "morgan": "1.8.2",
-    "pre-commit": "1.2.2",
     "raml2html": "6.3.0"
   },
   "eslintConfig": {
