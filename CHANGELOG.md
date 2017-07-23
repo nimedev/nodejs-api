@@ -1,5 +1,12 @@
 # Change Log
 
+## [8.3.1] - 2017-07-23
+
+### Updated
+- Upgrade dep: compression cors mongoose.
+- Upgrade devDep: chai eslint eslint-plugin-import raml2html.
+
+
 ## [8.3.0] - 2017-06-25
 
 ### Deleted
