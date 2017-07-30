@@ -1,5 +1,11 @@
 # Change Log
 
+## [8.3.2] - 2017-07-29
+
+### Updated
+- Update engines versions.
+
+
 ## [8.3.1] - 2017-07-23
 
 ### Updated
