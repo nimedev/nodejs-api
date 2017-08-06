@@ -36,15 +36,15 @@
     "mongoose": "4.11.4"
   },
   "devDependencies": {
-    "chai": "4.1.0",
+    "chai": "4.1.1",
     "chai-http": "3.0.0",
     "errorhandler": "1.5.0",
-    "eslint": "4.3.0",
+    "eslint": "4.4.0",
     "eslint-config-nimedev-base": "5.1.0",
     "eslint-plugin-import": "2.7.0",
-    "mocha": "3.4.2",
+    "mocha": "3.5.0",
     "morgan": "1.8.2",
-    "raml2html": "6.4.0"
+    "raml2html": "6.4.1"
   },
   "eslintConfig": {
     "extends": "nimedev-base"
