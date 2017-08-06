@@ -1,5 +1,12 @@
 # Change Log
 
+## [8.3.3] - 2017-08-06
+
+### Updated
+- Upgrade dep: mongoose.
+- Upgrade devDep: chai eslint mocha raml2html.
+
+
 ## [8.3.2] - 2017-07-29
 
 ### Updated
