@@ -1,5 +1,13 @@
 # Change Log
 
+## [8.3.4] - 2017-08-12
+
+### Updated
+- Upgrade dep: express mongoose.
+- Upgrade devDep: eslint.
+- Update package engines.
+
+
 ## [8.3.3] - 2017-08-06
 
 ### Updated
