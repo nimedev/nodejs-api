@@ -1,5 +1,14 @@
 # Change Log
 
+## [9.0.0] - 2017-08-14
+
+### Modified
+- Use a unique database as default configuration.
+
+### Updated
+- Upgrade dep: mongoose.
+
+
 ## [8.3.4] - 2017-08-12
 
 ### Updated
