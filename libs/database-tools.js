@@ -70,9 +70,21 @@ const findingOne = (model, query, projection = {}, populate = []) => {
 }
 
 /**
+ * Add suffix to URI of a database according to environment
+ * @param {string} uri - the base uri.
+ */
+const normalizeUri = (uri) => {
+  if (!uri) return undefined
+
+  const suffix = process.env.NODE_ENV === 'test' ? '-test' : ''
+  return `${uri}${suffix}`
+}
+
+/**
  * Common functions for CRUD operations
  */
 module.exports = Object.freeze({
   finding,
   findingOne,
+  normalizeUri,
 })

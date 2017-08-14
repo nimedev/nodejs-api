@@ -4,15 +4,13 @@
 
 'use strict'
 
-const mongoSuffix = process.env.NODE_ENV === 'test' ? '-test' : ''
+const { normalizeUri } = require('./../../libs/database-tools')
+const { defaultMongoUri } = require('./../../config')
 
 const config = {
   mongoose: {
     // Url according with environment variables
-    uri: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL ||
-    process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME ||
-    process.env.NODEJS_API_USER_MONGODB_URI ||
-    `mongodb://localhost:27017/nodejs-api_user${mongoSuffix}`,
+    uri: normalizeUri(process.env.YOGH_ACCOUNT_MONGODB_URI) || defaultMongoUri,
 
     // Setting for moongoose
     options: {

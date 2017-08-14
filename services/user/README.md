@@ -12,7 +12,7 @@
 
 # MongoDB configuration
 ## Uri for user service database.
-export NODEJS_API_USER_MONGODB_URI="mongodb://localhost:27017/nodejs-api:user"
+export NODEJS_API_USER_MONGODB_URI=NODEJS_API_MONGODB_URI
 ```
 
 You can copy this script in bashrc file, modify the variables and delete variables that don't need modification or are undefined.
@@ -20,5 +20,5 @@ You can copy this script in bashrc file, modify the variables and delete variabl
 To change any of this variables:
 
 ```sh
-export NODEJS_API_USER_MONGODB_URI="mongodb://nodejs-api.com/nodejs-api:user"
+export NODEJS_API_USER_MONGODB_URI="mongodb://nodejs-api.com/nodejs_api_user"
 ```
