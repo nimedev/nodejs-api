@@ -1,5 +1,15 @@
 # Change Log
 
+## [10.0.0] - 2017-08-22
+
+### Modified
+- Move test from __test__ to e2e folder.
+
+### Updated
+— Update package.json engines.
+— Upgrade devDep: eslint eslint-config-nimedev-base.
+
+
 ## [9.0.0] - 2017-08-14
 
 ### Modified
