@@ -1,7 +1,7 @@
 /**
  * Functions to test errors returned by the API
- * @module api-error
- * @member test/tools
+ * @module api-error.test
+ * @member test-tools
  */
 
 'use strict'

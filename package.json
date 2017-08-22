@@ -8,11 +8,12 @@
     "install:dev": "npm install --production=false",
     "lint": "eslint .",
     "start": "node server",
-    "test": "npm run test:unit && npm run test:api",
-    "test:api": "mocha '__tests__/api/**/*.spec.js'",
-    "test:unit": "npm run test:libs && npm run test:services",
-    "test:libs": "mocha 'libs/**/*.spec.js'",
-    "test:services": "mocha 'services/**/*.spec.js'"
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:e2e": "npm run test:e2e:api",
+    "test:e2e:api": "mocha 'e2e/api/**/*.spec.js'",
+    "test:unit": "npm run test:unit:libs && npm run test:unit:services",
+    "test:unit:libs": "mocha 'libs/**/*.spec.js'",
+    "test:unit:services": "mocha 'services/**/*.spec.js'"
   },
   "repository": {
     "type": "git",

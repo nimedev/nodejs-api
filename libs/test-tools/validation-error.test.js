@@ -1,7 +1,7 @@
 /**
  * Functions to test a ValidationError.
- * @module validation-error
- * @member test/tools
+ * @module validation-error.test
+ * @member test-tools
  */
 
 'use strict'

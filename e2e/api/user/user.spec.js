@@ -8,8 +8,8 @@ const app = require('../../../server')
 
 const chai = require('chai')
 const chaiHttp = require('chai-http')
-const { removingAllUsers, creatingUser } = require('../../../services/user/user.dam')
-const { checkErrorsProperty, checkResponseError } = require('../../tools')
+const { removingAllUsers, creatingUser } = require('./../../../services/user/user.dam')
+const { checkErrorsProperty, checkResponseError } = require('./../../../libs/test-tools')
 
 // Chai styles
 chai.use(chaiHttp)

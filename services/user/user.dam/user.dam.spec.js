@@ -7,7 +7,7 @@ process.env.NODE_ENV = 'test'
 
 const chai = require('chai')
 
-const { checkErrorsProperty } = require('../../../__tests__/tools')
+const { checkErrorsProperty } = require('./../../../libs/test-tools')
 const { removingAllUsers, creatingUser, findingUser, listingUsers } = require('./user.dam')
 
 const expect = chai.expect
